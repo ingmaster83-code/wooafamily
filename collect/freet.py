@@ -39,7 +39,11 @@ def collect():
             voice_raw=p.get("freeVoice") or "", sms_raw=p.get("freeSms") or "",
             list_price=base, price_now=now, price_after=after,
             discount_type=dtype, discount_months=months or None,
-            extra={"prepaid": p.get("svcType") == "선불"},
+            extra={"prepaid": p.get("svcType") == "선불",
+                   "details": {k: v for k, v in {
+                       "eSIM": "가입 가능" if p.get("esimYn") == "Y" else None,
+                       "개통 방식": "셀프 개통 가능" if p.get("selfYn") == "Y" else None,
+                       "상담 개통": "가능" if p.get("counselorYn") == "Y" else None}.items() if v} or None},
         ))
     return out
 

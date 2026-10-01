@@ -2,7 +2,7 @@
 import re
 import time
 from bs4 import BeautifulSoup
-from common import DELAY, http, is_5g_name, make_plan, won
+from common import DELAY, http, is_5g_name, make_plan, parse_overage, won
 
 BASE = "https://eyes.co.kr"
 NET = {"skt": "SKT", "kt": "KT", "lg": "LGU+"}
@@ -69,11 +69,31 @@ def parse(pid, h):
     if dtype == "none" and list_price is None:
         return None
     gen = "5G" if is_5g_name(name) else "LTE"
+    full = re.sub(r"\s+", " ", soup.get_text(" ", strip=True))
+    details = {}
+    blk = re.search(r"요금할인 정보(.*?)요금제 설명", full)
+    if blk:
+        b = blk.group(1)
+        labels = ["데이터 소진시", "인터넷 결합", "공용 Wifi", "부가통화", "핫스팟 테더링"]
+        pos = [(l, b.find(l)) for l in labels if b.find(l) >= 0]
+        pos.sort(key=lambda x: x[1])
+        for i, (l, st) in enumerate(pos):
+            en = pos[i + 1][1] if i + 1 < len(pos) else len(b)
+            v = b[st + len(l):en].strip(" :")
+            v = re.sub(r"가입 후 \d+일 안에.*$", "", v).strip()
+            if v:
+                details[{"데이터 소진시": "소진 후", "공용 Wifi": "공용 Wi-Fi", "핫스팟 테더링": "테더링"}.get(l, l)] = v
+        cm = re.search(r"가입 후 \d+일 안에[^.]*?계속 받을 수 있어요", b)
+        if cm:
+            details["할인 유지 조건"] = cm.group(0)
+    ov = parse_overage(full)
+    if ov:
+        details["초과 요금"] = ov
     return make_plan("아이즈모바일", pid.split("/")[0], name, net, f"{BASE}/payplan/plan_info/{pid}",
                      gen=gen, data_raw=data_raw, voice_raw=voice_raw, sms_raw=sms_raw,
                      list_price=list_price, price_now=now, price_after=after,
                      discount_type=dtype, discount_months=months,
-                     extra={"label": badge_txt or None})
+                     extra={"label": badge_txt or None, "details": details or None})
 
 
 def collect():

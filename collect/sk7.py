@@ -3,7 +3,7 @@ SK7은 SKT망 알뜰폰. 프로모션 할인은 약관상 '해지 전까지 평�
 import re
 import time
 from bs4 import BeautifulSoup
-from common import DELAY, http, make_plan, won
+from common import DELAY, http, make_plan, parse_overage, won
 
 BASE = "https://www.sk7mobile.com"
 LIST = BASE + "/prod/data/callingPlanList.do?refCode=USIM"
@@ -30,9 +30,25 @@ def parse(pid, h):
         dtype, now, after = "lifetime", promo, promo
     else:
         dtype, now, after = "none", base, base
+    details = {}
+    gi = t.find("기본 제공량 이용안내")
+    if gi >= 0:
+        seg = t[gi + len("기본 제공량 이용안내"):gi + 1800]
+        m = re.search(r"데이터\s+(.*?)\s+통화\s+HD Voice", seg)
+        if m:
+            v = re.split(r"\s(?:\d+Mbps\s*:|\d+(?:Kbps|GB)\s+기본제공\s+추가)", m.group(1).strip())[0]
+            details["데이터 안내"] = v.strip()[:140]
+        m = re.search(r"통화\s+(HD Voice.*?)\s+문자\s", seg)
+        if m:
+            v = re.split(r"\s부가통화 1초|\s※", m.group(1).strip())[0]
+            details["통화 안내"] = v.strip()[:140]
+    ov = parse_overage(t)
+    if ov:
+        details["초과 요금"] = ov
     return make_plan("SK7모바일", pid, name or pid, "SKT", VIEW.format(pid), gen=gen,
                      data_raw=data_raw, voice_raw=voice_raw, sms_raw=sms_raw,
-                     list_price=base, price_now=now, price_after=after, discount_type=dtype)
+                     list_price=base, price_now=now, price_after=after, discount_type=dtype,
+                     extra={"details": details or None})
 
 
 def collect():

@@ -9,7 +9,7 @@
   function won(v) { return v == null ? "-" : v.toLocaleString("ko-KR") + "원"; }
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
   function row(d) {
-    var img = d.i ? '<img class="d-img" loading="lazy" referrerpolicy="no-referrer" src="' + esc(d.i) + '" alt="">' : '<span class="d-img ph"></span>';
+    var img = d.i ? '<img class="d-img" loading="lazy" referrerpolicy="no-referrer" src="' + esc(d.i) + '" alt="' + esc(d.n) + '">' : '<span class="d-img ph"></span>';
     var price;
     if (d.p === "1+1" || d.p === "2+1" || d.p === "3+1") price = '<span class="d-list">정가 ' + won(d.l) + '</span><b class="d-unit">개당 ' + won(d.u) + '</b><span class="d-rate">' + d.r + '%↓</span>';
     else if (d.u != null && d.l && d.u < d.l && d.g !== "flyer") price = '<span class="d-list">정가 ' + won(d.l) + '</span><b class="d-unit">' + won(d.u) + '</b><span class="d-rate">' + d.r + '%↓</span>';

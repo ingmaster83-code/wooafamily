@@ -152,7 +152,15 @@ def head(title, desc, path, ld=None, noindex=False):
     ads = (f'<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={C.ADSENSE_CLIENT}" '
            f'crossorigin="anonymous"></script>') if C.ADSENSE_CLIENT else ""
     ldj = "".join(f'<script type="application/ld+json">{json.dumps(x, ensure_ascii=False)}</script>' for x in (ld or []))
-    robots = '<meta name="robots" content="noindex,follow">' if noindex else ""
+    robots = ('<meta name="robots" content="noindex,follow">' if noindex else
+              '<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">')
+    img = C.DOMAIN + "/og-default.png"
+    social = (f'<meta property="og:image" content="{img}"><meta property="og:image:width" content="1200">'
+              f'<meta property="og:image:height" content="630"><meta property="og:image:alt" content="{C.SITE_NAME} — {C.TAGLINE}">'
+              f'<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{esc(title)}">'
+              f'<meta name="twitter:description" content="{esc(desc)}"><meta name="twitter:image" content="{img}">')
+    icons = ('<meta name="theme-color" content="#10b981"><link rel="icon" href="/favicon.svg" type="image/svg+xml">'
+             '<link rel="icon" href="/favicon.ico" sizes="any"><link rel="apple-touch-icon" href="/apple-touch-icon.png">')
     verify = f'<meta name="naver-site-verification" content="{C.NAVER_SITE_VERIFICATION}">' if getattr(C, "NAVER_SITE_VERIFICATION", "") else ""
     return (f'<!doctype html><html lang="ko"><head><meta charset="utf-8">'
             f'<meta name="viewport" content="width=device-width,initial-scale=1">'
@@ -160,7 +168,7 @@ def head(title, desc, path, ld=None, noindex=False):
             f'<link rel="canonical" href="{url}">{robots}{verify}'
             f'<meta property="og:type" content="website"><meta property="og:title" content="{esc(title)}">'
             f'<meta property="og:description" content="{esc(desc)}"><meta property="og:url" content="{url}">'
-            f'<meta property="og:site_name" content="{C.SITE_NAME}"><meta property="og:locale" content="ko_KR">'
+            f'<meta property="og:site_name" content="{C.SITE_NAME}"><meta property="og:locale" content="ko_KR">{social}{icons}'
             f'<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">'
             f'<link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="/density.css"><link rel="stylesheet" href="/deal.css">{ga}{ads}{ldj}</head><body>')
 
@@ -175,12 +183,13 @@ def header(active=""):
             f'<nav class="gnav"><div class="dd"><button type="button" class="dd-b">전체 서비스 <span>▾</span></button>'
             f'<div class="dd-m">{menu}</div></div>'
             f'<a href="{SEC}/" class="{"on" if active == "phone" else ""}">알뜰폰 요금제</a>'
+            f'<a href="{SEC}/calculator/" class="{"on" if active == "calc" else ""}">절약 계산기</a>'
             f'<a href="/deal/" class="{"on" if active == "deal" else ""}">편의점·마트 행사</a>'
             f'<a href="/about/">소개</a></nav></div></header>')
 
 
 def subnav(active_axis=None):
-    tabs = [(f"{SEC}/", "알뜰폰 홈", "home")] + [(f"{SEC}/{a}/", AXIS_TITLE[a] + "별", a) for a in TABS]
+    tabs = [(f"{SEC}/", "알뜰폰 홈", "home")] + [(f"{SEC}/{a}/", AXIS_TITLE[a] + "별", a) for a in TABS] + [(f"{SEC}/calculator/", "절약 계산기", "calc")]
     t = "".join(f'<a href="{u}" class="{"on" if k == active_axis else ""}">{n}</a>' for u, n, k in tabs)
     return f'<div class="sub"><div class="wrap sub-in">{t}</div></div>'
 
@@ -215,7 +224,7 @@ def footer(stamp, finder_js=False):
             f'<div><h4>안내</h4><a href="/about/">서비스 소개·수집 정책</a><a href="/privacy/">개인정보처리방침</a></div></div>'
             f'<div class="gf-note"><p>요금 정보는 각 통신사 공식 홈페이지를 기준으로 하루 여러 번 확인해 갱신합니다(최근 확인: {stamp}). '
             f'실제 가입 조건과 요금은 반드시 통신사 화면에서 다시 확인하세요. 우아패밀리는 통신사의 대리·중개 사이트가 아닙니다.</p>{contact}'
-            f'<p>© 2026 {C.SITE_NAME}</p></div></div></footer>{'<script src="/finder.js"></script>' if finder_js else ''}</body></html>')
+            f'<p>© 2026 {C.SITE_NAME}</p></div></div></footer><script src="/share.js"></script>{'<script src="/finder.js"></script>' if finder_js else ''}</body></html>')
 
 
 def qos_kbps(p):
@@ -318,13 +327,19 @@ CARDS = []
 PHONES = {}
 
 
+def calc_banner():
+    return (f'<a class="calc-banner" href="{SEC}/calculator/"><span class="cb-ic">📉</span>'
+            '<span class="cb-t"><b>내 통신비, 알뜰폰으로 바꾸면 얼마나 줄까?</b><span>지금 요금과 사용량만 넣으면 월·연 절약액을 계산해 드려요</span></span>'
+            '<span class="cb-go">절약 계산기 →</span></a>')
+
+
 def phone_carousel():
     items = PHONES.get("items") or []
     if not items:
         return ""
     slides = "".join(
         f'<a class="pcar-s" href="{esc(p["url"])}" rel="nofollow sponsored noopener" target="_blank">'
-        f'{("<img class=pcar-img referrerpolicy=no-referrer src=" + chr(34) + esc(p["image"]) + chr(34) + " alt=>") if p.get("image") else "<span class=pcar-img></span>"}'
+        f'{("<img class=pcar-img referrerpolicy=no-referrer src=" + chr(34) + esc(p["image"]) + chr(34) + " alt=" + chr(34) + esc(p["name"]) + chr(34) + ">") if p.get("image") else "<span class=pcar-img></span>"}'
         f'<span class="pcar-m"><span class="pcar-rank">인기 {p["rank"]}위</span><b>{esc(p["name"])}</b>'
         f'<span class="pcar-p">{p["price"]:,}원{" <i>로켓배송</i>" if p.get("rocket") else ""}</span>'
         f'<span class="pcar-go">온라인 가격비교 ↗</span></span></a>' for p in items)
@@ -345,7 +360,7 @@ def phone_rank_box():
     rows = "".join(
         f'<a class="pr" href="{esc(p["url"])}" rel="nofollow sponsored noopener" target="_blank">'
         f'<span class="pr-n n{p["rank"]}">{p["rank"]}</span>'
-        f'{("<img class=pr-img referrerpolicy=no-referrer src=" + chr(34) + esc(p["image"]) + chr(34) + " alt=>") if p.get("image") else "<span class=pr-img></span>"}'
+        f'{("<img class=pr-img referrerpolicy=no-referrer src=" + chr(34) + esc(p["image"]) + chr(34) + " alt=" + chr(34) + esc(p["name"]) + chr(34) + ">") if p.get("image") else "<span class=pr-img></span>"}'
         f'<span class="pr-m"><b>{esc(p["name"])}</b><span class="pr-p">{p["price"]:,}원{" <i>로켓배송</i>" if p.get("rocket") else ""}</span></span>'
         f'<span class="pr-go">온라인 가격비교 ↗</span></a>' for p in items)
     return ('<section class="card phones"><h2>알뜰폰과 함께 쓰는 자급제폰 TOP 10</h2>'
@@ -434,6 +449,28 @@ def stats_text(plans, label):
             f"평생 할인 요금제는 {life}개이며, 통신사별로는 {top} 순으로 많습니다.")
 
 
+def _trim(s, n):
+    """설명문을 n자 안쪽으로, 문장/쉼표 경계에서 자른다."""
+    s = re.sub(r"\s+", " ", s).strip()
+    if len(s) <= n:
+        return s
+    cut = s[:n]
+    k = max(cut.rfind(", "), cut.rfind(". "), cut.rfind(" · "))
+    return (cut[:k] if k > n * 0.6 else cut).rstrip(" ,.·") + "…"
+
+
+def plan_title_base(p):
+    name = p["name"] if len(p["name"]) <= 24 else p["name"][:23] + "…"
+    return f"{p['carrier']} {name} 요금제 월 {p['price_now']:,}원"
+
+
+def plan_desc(p, det, ym):
+    tether = f", 테더링 {det['테더링']}" if det.get("테더링") else ""
+    s = (f"{p['carrier']} {p['name']} 요금제 {price_story(p)}. 데이터 {data_label(p)}, 통화 {voice_label(p)}, "
+         f"문자 {sms_label(p)}{tether}. {p['network']}망 {p['gen'] or ''} · {ym} 확인.")
+    return _trim(s, 120)
+
+
 def build():
     plans = json.load(open(os.path.join(HERE, "data", "plans.json"), encoding="utf-8"))
     plans = [p for p in plans if p["network"] and p["price_now"] is not None]
@@ -457,7 +494,7 @@ def build():
         fp = os.path.join(OUT, name)
         shutil.rmtree(fp, ignore_errors=True) if os.path.isdir(fp) else os.remove(fp)
     open(os.path.join(OUT, "CNAME"), "w", encoding="utf-8").write(C.DOMAIN.replace("https://", "") + "\n")
-    for f in ("style.css", "density.css", "deal.css", "deal.js", "finder.js", "pcar.js"):
+    for f in ("style.css", "density.css", "deal.css", "deal.js", "finder.js", "pcar.js", "calc.js", "share.js", "og-default.png", "favicon.ico", "favicon.svg", "apple-touch-icon.png", "icon-512.png"):
         shutil.copy(os.path.join(HERE, "static", f), os.path.join(OUT, f))
 
     by_axis = {a: defaultdict(list) for a in AXES}
@@ -473,6 +510,16 @@ def build():
             by_axis[a][v].sort(key=lambda p: (eff(p) if eff(p) is not None else 10 ** 9, p["name"]))
 
     # --- 요금제 상세
+    c1 = Counter(plan_title_base(p) for p in plans)
+    c2 = Counter((plan_title_base(p), p["network"]) for p in plans)
+    ptitle = {}
+    for p in plans:
+        t_ = plan_title_base(p)
+        if c1[t_] > 1:
+            t_ += f" ({p['network']}망)"
+            if c2[(plan_title_base(p), p["network"])] > 1:
+                t_ += f" #{p['plan_id'][:8]}"
+        ptitle[(p["carrier"], p["plan_id"])] = t_
     for p in plans:
         path = plan_url(p)
         c = p["_cat"]
@@ -480,15 +527,33 @@ def build():
         rank = db.index(p) + 1 if p in db else None
         alts = [q for q in db if q is not p and q["_cat"]["voice"] == c["voice"] and eff(q) is not None
                 and eff(p) is not None and eff(q) <= eff(p) and q["carrier"] != p["carrier"]][:5]
-        title = f"{p['name']} 요금 · 데이터 · 할인 조건 | {p['carrier']} 알뜰폰"
-        desc = (f"{p['carrier']} {p['name']} 요금제: {price_story(p)}. 데이터 {data_label(p)}, 통화 {voice_label(p)}, "
-                f"문자 {sms_label(p)}. {ym} 기준 통신사 공식 정보.")
+        title = f"{ptitle[(p['carrier'], p['plan_id'])]} | {C.SITE_NAME}"
         bc, bld = crumbs([("/", "홈"), (SEC + "/", "알뜰폰 요금제"), (cat_url("carrier", p["carrier"]), p["carrier"]), (None, p["name"])])
         spec = [("통신사", p["carrier"]), ("통신망", p["network"]), ("세대", p["gen"] or "-"),
                 ("데이터", data_label(p)), ("통화", voice_label(p)), ("문자", sms_label(p)),
                 ("정가", won(p["list_price"]) if p["list_price"] else "통신사 화면 확인")]
         if p["discount_type"] == "period":
             spec.append(("첫 12개월 월평균", won(year_avg(p))))
+        det = p.get("details") or {}
+        if det.get("테더링"):
+            spec.append(("테더링·쉐어링", det["테더링"]))
+        desc = plan_desc(p, det, ym)
+        tether_s = f" 테더링·쉐어링은 {det['테더링']}입니다." if det.get("테더링") else ""
+        if p["discount_type"] == "lifetime":
+            disc_s = "통신사가 평생 할인으로 안내한 요금제라 가입 후 같은 요금을 이어서 낼 수 있습니다."
+        elif p["discount_type"] == "period":
+            disc_s = (f"할인 기간({p['discount_months']}개월)이 끝나면 월 {won(p['price_after'])}으로 오르니, 오래 쓸 계획이라면 이 금액을 기준으로 비교하세요."
+                      if p["discount_months"] and p["price_after"] is not None else "기간 한정 할인이 적용된 요금제입니다.")
+        else:
+            disc_s = "별도 할인 없이 표시된 요금이 계속 적용되는 정가형 요금제입니다."
+        summary = (f"{p['carrier']} {p['name']}은(는) {p['network']}망 {(p['gen'] or '') + ' ' if p['gen'] else ''}알뜰폰 요금제로, {price_story(p)}입니다. "
+                   f"데이터는 {data_label(p)}, 통화는 {voice_label(p)}, 문자는 {sms_label(p)}입니다.{tether_s} {disc_s}")
+        prod_ld = {"@context": "https://schema.org", "@type": "Product", "name": f"{p['carrier']} {p['name']} 요금제",
+                   "description": desc, "brand": {"@type": "Brand", "name": p["carrier"]}, "category": "알뜰폰 요금제",
+                   "url": C.DOMAIN + path,
+                   "offers": {"@type": "Offer", "priceCurrency": "KRW", "price": p["price_now"],
+                              "availability": "https://schema.org/InStock", "url": p["source_url"]}}
+
         grid = "".join(f"<div><span>{k}</span><b>{esc(str(v))}</b></div>" for k, v in spec)
         chips = "".join(f'<a class="chip" href="{cat_url(a, c[a])}">{esc(LABELS[a][c[a]])}</a>'
                         for a in ["network", "gen", "data", "price", "voice", "discount"] if c.get(a))
@@ -505,6 +570,16 @@ def build():
                     "장기 월 요금이 같거나 낮은 다른 통신사 요금제입니다.</p>" + plan_rows(alts) + "</section>") if alts else ""
         pc = cards_for(carrier=p["carrier"], network=p["network"]) if (eff(p) or 0) >= 8000 else []
         card_html_box = card_section(pc, f"{p['carrier']} 제휴카드로 통신비 더 줄이기", eff(p))
+        # 통신사 원문에서 확인된 추가 정보(있는 것만 표시)
+        extra_keys = [k for k in ("소진 후", "인터넷 결합", "공용 Wi-Fi", "부가통화", "할인 유지 조건", "초과 요금", "데이터 안내", "통화 안내", "eSIM", "개통 방식", "상담 개통")
+                      if det.get(k) and k != "할인 유지 조건"]
+        if extra_keys:
+            items = "".join(f'<div class="xi{" wide" if len(str(det[k])) > 40 else ""}"><span>{esc(k)}</span><b>{esc(str(det[k]))}</b></div>' for k in extra_keys)
+            keep_note = ('<p class="note warn">'+ esc(det["할인 유지 조건"]) + '</p>') if det.get("할인 유지 조건") else ""
+            detail_html = (f'<section class="card"><h2>이 요금제의 추가 정보</h2><p class="muted sm">{esc(p["carrier"])} 공식 안내에서 확인한 내용입니다. '
+                           f'실제 조건은 가입 전 통신사 화면에서 한 번 더 확인하세요.</p><div class="xgrid">{items}</div>{keep_note}</section>')
+        else:
+            detail_html = ""
         faq = [
             (f"{p['name']} 요금은 계속 같은가요?",
              {"lifetime": "통신사가 평생(가입 유지 시 계속) 할인으로 안내한 요금제입니다. 단, 조건(사용 실적, 요금제 변경 등)은 통신사 안내를 꼭 확인하세요.",
@@ -516,18 +591,18 @@ def build():
              "가입 시점·번호이동 여부·제휴 혜택에 따라 실제 청구액은 달라질 수 있어요. 최종 조건은 가입 화면에서 확인하세요."),
         ]
         faq_html = "".join(f"<details><summary>{esc(q)}</summary><p>{esc(a)}</p></details>" for q, a in faq)
-        ld = [bld, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+        ld = [bld, prod_ld, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
             {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faq]}]
         body = (head(title, desc, path, ld) + header("phone") + subnav() + '<main class="wrap">' + bc +
                 f'<div class="pp"><div class="pp-main"><section class="card hero-card"><div class="hc-top"><span class="tag {p["discount_type"]}">{esc(discount_label(p))}</span>'
                 f'<span class="muted">{esc(p["carrier"])} · {esc(p["network"])}{" · " + p["gen"] if p["gen"] else ""}</span></div>'
-                f'<h1>{esc(p["name"])}</h1>{flow}<div class="chips">{chips}</div>'
+                f'<h1>{esc(p["carrier"])} {esc(p["name"])} 요금제</h1>{flow}<div class="chips">{chips}</div>'
                 f'<a class="btn" href="{esc(p["source_url"])}" rel="nofollow noopener" target="_blank">{esc(p["carrier"])} 공식 페이지에서 확인 ↗</a>'
                 f'<p class="fine">확인 시각 {esc(p["fetched_at"])} · 가입 전 반드시 통신사 화면에서 최종 요금을 확인하세요.</p></section>'
-                f'<section class="card"><h2>요금제 상세</h2><div class="grid">{grid}</div>{rank_txt}</section>'
-                f'{card_html_box}{alt_html}<section class="card"><h2>자주 묻는 질문</h2>{faq_html}</section></div>'
+                f'<section class="card"><h2>요금제 상세</h2><p class="prose-p">{esc(summary)}</p><div class="grid">{grid}</div>{rank_txt}</section>'
+                f'{detail_html}{card_html_box}{alt_html}<section class="card"><h2>자주 묻는 질문</h2>{faq_html}</section></div>'
                 f'<aside class="pp-side"><section class="card side-sum"><h3>이 요금제와 비슷한 조건 보기</h3><div class="chips">{chips}</div>'
-                f'<a class="lnk-b" href="{SEC}/">전체 요금제 비교하기 →</a></section>{coupang()}</aside></div></main>' + footer(stamp))
+                f'<a class="lnk-b" href="{SEC}/">전체 요금제 비교하기 →</a></section>{calc_banner()}{coupang()}</aside></div></main>' + footer(stamp))
         write(path, body)
 
     # --- 카테고리 페이지 (단일 + 조합)
@@ -549,8 +624,9 @@ def build():
         sel = sorted(sel, key=lambda p: (eff(p) if eff(p) is not None else 10 ** 9, p["name"]))
         n = len(sel)
         effs = [eff(p) for p in sel if eff(p) is not None]
-        title = f"{label} 알뜰폰 요금제 비교 ({n}개) | {C.SITE_NAME}"
-        desc = f"{label} 알뜰폰 요금제 {n}개를 장기 월 요금 낮은 순으로 비교. {min(effs):,}원부터. {ym} 기준 통신사 공식 정보."
+        life_n = sum(1 for p_ in sel if p_["discount_type"] == "lifetime")
+        title = f"{label} 알뜰폰 요금제 비교 ({n}개) 월 {min(effs):,}원부터 | {C.SITE_NAME}"
+        desc = _trim(f"{label} 알뜰폰 요금제 {n}개를 장기 월 요금 낮은 순으로 비교. 최저 월 {min(effs):,}원, 평생 할인 {life_n}개. {ym} 통신사 공식 정보 기준.", 120)
         bc, bld = crumbs(crumb_items)
         refine = []
         cur_axes = {a for a, _ in parents}
@@ -609,8 +685,9 @@ def build():
             cards.append(f'<a class="idx" href="{cat_url(a, v)}"><b>{esc(LABELS[a][v])}</b>'
                          f'<span class="muted">요금제 {len(sel)}개</span><span class="sm">최저 월 {won(min(effs))}</span></a>')
         bc, bld = crumbs([("/", "홈"), (SEC + "/", "알뜰폰 요금제"), (None, AXIS_TITLE[a] + "별")])
-        t = f"{AXIS_TITLE[a]}별 알뜰폰 요금제 | {C.SITE_NAME}"
-        write(f"{SEC}/{a}/", head(t, f"{AXIS_DESC[a]}를 한눈에 확인하세요. {ym} 기준 통신사 공식 정보.", f"{SEC}/{a}/", [bld])
+        tops = ", ".join(f"{LABELS[a][v_]} {len(s_)}개" for v_, s_ in sorted(by_axis[a].items(), key=lambda t_: -len(t_[1]))[:4] if len(s_) >= C.MIN_COMBO)
+        t = f"{AXIS_TITLE[a]}별 알뜰폰 요금제 비교 ({ym}) | {C.SITE_NAME}"
+        write(f"{SEC}/{a}/", head(t, _trim(f"{AXIS_DESC[a]} — {tops} 등. {ym} 통신사 공식 정보 기준.", 120), f"{SEC}/{a}/", [bld])
               + header("phone") + subnav(a) + '<main class="wrap">' + bc
               + f'<h1 class="ph">{AXIS_TITLE[a]}별 알뜰폰 요금제</h1><p class="muted">{AXIS_DESC[a]}</p><div class="idxs">{"".join(cards)}</div>'
               + coupang() + "</main>" + footer(stamp))
@@ -625,14 +702,16 @@ def build():
     car_cards = "".join(
         f'<a class="idx" href="{cat_url("carrier", c)}"><b>{esc(c)}</b><span class="muted">요금제 {len(s)}개</span>'
         f'<span class="sm">최저 월 {won(min(eff(p) for p in s))}</span></a>' for c, s in sorted(by_axis["carrier"].items(), key=lambda t: -len(t[1])))
-    sec_title = f"알뜰폰 요금제 비교 — 통신사·데이터·요금대별 {len(plans)}개 | {C.SITE_NAME}"
-    sec_desc = (f"알뜰폰 {n_carrier}개 통신사의 요금제 {len(plans)}개를 통신망·데이터량·요금대·할인 유형별로 비교하세요. "
-                f"{ym} 기준 통신사 공식 정보.")
+    n_life_all = sum(1 for p_ in plans if p_["discount_type"] == "lifetime")
+    min_all = min(eff(p_) for p_ in plans if eff(p_) is not None)
+    sec_title = f"알뜰폰 요금제 비교 {ym} — 평생 할인·통신사·데이터별 {len(plans)}개 | {C.SITE_NAME}"
+    sec_desc = _trim(f"알뜰폰 {n_carrier}개 통신사 요금제 {len(plans)}개를 한곳에서 비교. 평생 할인 {n_life_all}개, 최저 월 {min_all:,}원부터. "
+                     f"통신망·데이터량·요금대 필터와 절약 계산기 제공. {ym} 기준.", 120)
     bc, bld = crumbs([("/", "홈"), (None, "알뜰폰 요금제")])
     all_sorted = sorted(plans, key=lambda p: (eff(p) if eff(p) is not None else 10 ** 9, p["name"]))
     write(SEC + "/", head(sec_title, sec_desc, SEC + "/", [bld]) + header("phone") + subnav("home") + '<main class="wrap">' + bc +
           f'<div class="ph-row"><h1 class="ph">알뜰폰 요금제 비교</h1>'
-          f'<p class="muted">{n_carrier}개 통신사 · 요금제 {len(plans)}개 · 통신사 공식 정보 기준</p></div>'
+          f'<p class="muted">{n_carrier}개 통신사 · 요금제 {len(plans)}개 · 통신사 공식 정보 기준</p></div>' + calc_banner()
           + finder(all_sorted, f"{int(ymd[5:7])}/{int(ymd[8:10])} {stamp[11:]}", carriers)
           + f'<section class="card"><h2>조건으로 바로가기</h2>{"".join(quick)}</section>'
           f'<section><h2 class="sh">통신사별로 보기</h2><div class="idxs">{car_cards}</div></section>{coupang()}</main>' + footer(stamp, True))
@@ -657,15 +736,22 @@ def build():
     car_list = "".join(
         f'<a class="cl" href="{cat_url("carrier", c)}"><b>{esc(c)}</b><span>{len(ss)}개</span><span class="sm">최저 {won(min(eff(p) for p in ss))}</span></a>'
         for c, ss in sorted(by_axis["carrier"].items(), key=lambda t: -len(t[1])))
-    hld = {"@context": "https://schema.org", "@type": "WebSite", "name": C.SITE_NAME, "url": C.DOMAIN}
-    home_title = f"{C.SITE_NAME} — {C.TAGLINE} | 생활비 절약 정보 모음"
-    home_desc = "통신비·공과금·교통비·생활물가까지, 생활비를 줄여주는 정보를 한곳에 모았습니다. 지금은 알뜰폰 요금제 비교를 제공합니다."
-    write("/", head(home_title, home_desc, "/", [hld]) + header() + '<main class="wrap home">'
+    hld = {"@context": "https://schema.org", "@type": "WebSite", "name": C.SITE_NAME, "url": C.DOMAIN, "inLanguage": "ko-KR"}
+    org_ld = {"@context": "https://schema.org", "@type": "Organization", "name": C.SITE_NAME, "url": C.DOMAIN,
+              "logo": C.DOMAIN + "/icon-512.png", "slogan": C.TAGLINE}
+    try:
+        n_deals = len(json.load(open(os.path.join(HERE, "data", "deals.json"), encoding="utf-8")))
+    except Exception:  # noqa: BLE001
+        n_deals = 0
+    home_title = f"{C.SITE_NAME} — 알뜰폰 요금제 비교·편의점 1+1 행사 모음, 생활비 절약"
+    home_desc = _trim(f"알뜰폰 요금제 {len(plans)}개와 편의점·마트 행사 상품 {n_deals:,}개를 정가·개당 가격으로 비교하세요. "
+                      "통신비 절약 계산기, 자급제폰 인기 순위까지 생활비 절약 정보를 한곳에.", 120)
+    write("/", head(home_title, home_desc, "/", [hld, org_ld]) + header() + '<main class="wrap home">'
           f'<section class="hero mini"><div class="hm-l"><span class="eyebrow">{C.TAGLINE}</span><h1>생활비, 우아하게 줄여요</h1>'
           f'<p>통신비부터 하나씩. 광고에 흔들리지 않는 비교 정보로 매달 나가는 돈을 줄이세요.</p>'
           f'<a class="btn sm" href="{SEC}/">알뜰폰 요금제 비교하기</a></div>'
-          f'<div class="hm-r">{"".join(f"<div><span>{k}</span><b>{v}</b></div>" for k, v in stats)}</div></section>'
-          f'<section><h2 class="sh">절약 서비스</h2><div class="svcs c">{"".join(svc_cards)}</div></section>'
+          f'<div class="hm-r">{"".join(f"<div><span>{k}</span><b>{v}</b></div>" for k, v in stats)}</div></section>' +
+          calc_banner() + f'<section><h2 class="sh">절약 서비스</h2><div class="svcs c">{"".join(svc_cards)}</div></section>'
           f'<div class="cols"><section class="col-l"><h2 class="sh">평생 할인 최저가 TOP 8</h2><div class="hl">{plan_rows(life_top[:8])}</div>'
           f'<p class="more"><a href="{SEC}/discount/lifetime/">평생 할인 요금제 {n_life}개 전체 보기 →</a></p></section>'
           f'<section class="col-r"><h2 class="sh">조건으로 찾기</h2><div class="card tight">{"".join(hq)}</div>'
@@ -699,6 +785,57 @@ def build():
             "<h2>제3자 광고·제휴</h2><p>쿠팡 파트너스 배너 등 외부 서비스가 자체 쿠키를 사용할 수 있으며, 해당 서비스의 개인정보 처리 정책이 적용됩니다.</p><p>이 사이트는 Google 애드센스 등 제3자 광고 서비스를 이용할 수 있습니다. Google을 포함한 제3자 광고 사업자는 쿠키를 사용하여 이용자가 이 사이트나 다른 사이트를 방문한 기록을 바탕으로 광고를 게재할 수 있습니다. 이용자는 <a href=\"https://adssettings.google.com\" rel=\"noopener\" target=\"_blank\">Google 광고 설정</a>에서 맞춤 광고를 해제할 수 있습니다.</p>"
             "</section></main>")
     write("/privacy/", head(f"개인정보처리방침 | {C.SITE_NAME}", "우아패밀리 개인정보처리방침", "/privacy/") + header() + priv + footer(stamp))
+
+    # --- 알뜰폰 갈아타기 절약 계산기
+    def _unl(p):
+        return bool(p["data_unlimited"] or qos_kbps(p) > 0)
+
+    RESTRICT = re.compile(r"시니어|청소년|키즈|어린이|청년|복지|장애|군인|병사|다문화|외국인|기초|차상위|국가유공|경로|학생|Teen|teen|유쓰|Uth")
+    DEVICE = re.compile(r"태블릿|스마트기기|스마트 디바이스|디바이스|워치|IoT|사물|듀얼|세컨|웨어러블|패드|웨어|데이터쉐어|셰어링|쉐어링|선불|PP\b|와이파이|Wi-?Fi|라우터|에그")
+    cdata = []
+    for p in plans:
+        if p["price_now"] is None:
+            continue
+        label = p["name"] + " " + (p.get("label") or "")
+        if DEVICE.search(label) or p.get("prepaid"):
+            continue  # 휴대폰 요금제가 아닌 상품은 계산기에서 제외
+        dgb = 9999 if p["data_unlimited"] else (p["data_gb"] or 0)
+        cdata.append({"u": plan_url(p), "n": p["name"], "c": p["carrier"], "w": p["network"], "g": p["gen"] or "", "d": round(dgb, 2),
+                      "l": 1 if _unl(p) else 0, "v": 9999 if p["voice_unlimited"] else (p["voice_min"] or 0),
+                      "p": p["price_now"], "a": p["price_after"], "m": p["discount_months"] or 0, "t": p["discount_type"],
+                      "r": 1 if RESTRICT.search(label) else 0})
+    os.makedirs(os.path.join(OUT, "phone", "calculator"), exist_ok=True)
+    json.dump(cdata, open(os.path.join(OUT, "phone", "calculator", "data.json"), "w", encoding="utf-8"), ensure_ascii=False, separators=(",", ":"))
+    cpath = SEC + "/calculator/"
+    cbc, cbld = crumbs([("/", "홈"), (SEC + "/", "알뜰폰 요금제"), (None, "갈아타기 절약 계산기")])
+    ctitle = f"알뜰폰 갈아타기 절약 계산기 — 내 통신비 얼마나 줄일 수 있을까 | {C.SITE_NAME}"
+    cdesc = f"지금 내는 통신 요금과 사용량을 넣으면 알뜰폰 {len(cdata)}개 요금제 중 조건에 맞는 것을 찾아 월·연 절약액을 계산합니다. {ym} 기준."
+    faq = [("절약액은 어떻게 계산하나요?", "입력한 현재 월 요금의 12개월 합계에서, 알뜰폰 요금제의 첫 12개월 납부액(기간 할인은 할인 개월 수만큼만 적용)을 뺀 금액입니다."),
+           ("통신사 약정이나 결합 할인은 반영되나요?", "아니요. 입력하신 월 요금을 기준으로 단순 비교합니다. 선택약정·가족/인터넷 결합 할인 등은 실제 청구액에 따라 달라지니 현재 청구서의 최종 금액을 넣으면 가장 정확합니다."),
+           ("'소진 후 무제한'은 무슨 뜻인가요?", "기본 데이터를 다 쓴 뒤에도 속도를 제한한 채(예: 1Mbps) 계속 쓸 수 있는 요금제입니다. '무제한'을 고르면 이런 요금제만 보여줍니다.")]
+    cfaq = "".join(f"<details><summary>{esc(q)}</summary><p>{esc(a)}</p></details>" for q, a in faq)
+    cld = [cbld, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
+        {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faq]}]
+    write(cpath, head(ctitle, cdesc, cpath, cld) + header("phone") + subnav("calc") + '<main class="wrap">' + cbc +
+          '<div class="ph-row"><h1 class="ph">알뜰폰 갈아타기 절약 계산기</h1><p class="muted">지금 요금과 사용량을 넣으면 월·연 절약액을 계산해요</p></div>'
+          '<form id="calc" class="card calc-form" autocomplete="off"><div class="cgrid">'
+          '<label>지금 내는 월 요금<span class="in"><input id="c-fee" type="number" inputmode="numeric" min="0" step="1000" value="55000"><i>원</i></span>'
+          '<span class="chips"><button type="button" class="fee-chip chip" data-v="35000">3만원대</button><button type="button" class="fee-chip chip" data-v="55000">5만원대</button>'
+          '<button type="button" class="fee-chip chip" data-v="75000">7만원대</button><button type="button" class="fee-chip chip" data-v="95000">9만원대</button></span></label>'
+          '<label>월 데이터 사용량<select id="c-data"><option value="0">거의 안 써요 (1GB 이하)</option><option value="3">3GB 안팎</option><option value="5">5GB 안팎</option>'
+          '<option value="10" selected>10GB 안팎</option><option value="15">15GB 안팎</option><option value="30">30GB 안팎</option><option value="50">50GB 안팎</option>'
+          '<option value="100">100GB 이상</option><option value="unl">무제한이 필요해요</option></select></label>'
+          '<label>통화<select id="c-voice"><option value="0">거의 안 써요</option><option value="100">100분 안팎</option><option value="300" selected>300분 안팎</option><option value="9999">무제한이 필요해요</option></select></label>'
+          '<label>통신망<select id="c-net"><option value="">상관없어요</option><option value="SKT">SKT망</option><option value="KT">KT망</option><option value="LGU+">LG U+망</option></select></label>'
+          '</div><div class="copts"><label class="ck"><input id="c-5g" type="checkbox"> 5G 요금제만</label>'
+          '<label class="ck"><input id="c-long" type="checkbox"> 오래 쓸 요금제만 (기간 할인 제외)</label>'
+          '<label class="ck"><input id="c-target" type="checkbox"> 시니어·청소년·복지 등 대상 한정 요금제도 보기</label></div></form>'
+          '<section class="calc-sum" id="calc-sum"><b>요금과 사용량을 넣어 보세요</b><span>조건에 맞는 알뜰폰 요금제를 찾아 드려요</span></section>'
+          '<div id="calc-out"></div>'
+          '<section class="card"><h2>이렇게 계산해요</h2><p class="prose-p">입력한 월 요금의 12개월 합계와 알뜰폰 요금제의 첫 12개월 납부액을 비교합니다. '
+          '기간 할인 요금제는 할인이 끝난 뒤 오르는 요금까지 반영하니, 오래 쓸 생각이면 "오래 쓸 요금제만"을 켜서 보세요. '
+          '실제 청구액은 통신사 약정·결합 할인, 부가세, 가입 조건에 따라 달라질 수 있습니다.</p></section>'
+          f'<section class="card"><h2>자주 묻는 질문</h2>{cfaq}</section>{coupang()}</main>' + footer(stamp).replace("</body>", '<script src="/calc.js"></script></body>'))
 
     # --- 편의점·마트 행사 섹션
     import build_deal

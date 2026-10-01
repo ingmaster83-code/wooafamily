@@ -30,6 +30,14 @@ def parse_card(carrier, base, li):
             voice = t[2:].strip()
         elif t.startswith("문자"):
             sms = t[2:].strip()
+    li_text = re.sub(r"\s+", " ", li.get_text(" ", strip=True))
+    details = {}
+    tm = re.search(r"테더링\s*(\d+(?:\.\d+)?\s*(?:GB|MB)|무제한|불가)", li_text)
+    if tm:
+        details["테더링"] = tm.group(1).replace(" ", "") + "까지" if tm.group(1) not in ("무제한", "불가") else tm.group(1)
+    sm = re.search(r"(\d+(?:\.\d+)?\s*(?:Mbps|Kbps))\s*(?:데이터\s*)?무제한", li_text)
+    if sm:
+        details["소진 후"] = f"최대 {sm.group(1).replace(' ', '')} 속도로 무제한"
     price_el = li.select_one(".price")
     ptxt = price_el.get_text(" ", strip=True) if price_el else ""
     ref = li.select_one(".price .ref")
@@ -58,7 +66,7 @@ def parse_card(carrier, base, li):
     return make_plan(carrier, pid, title.get_text(strip=True), net, f"{base}/rateplan_view.do?no={pid}",
                      gen=gen, data_raw=data_raw, voice_raw=voice, sms_raw=sms,
                      list_price=None, price_now=now, price_after=after, discount_type=dtype, discount_months=months,
-                     extra={"label": " ".join(b for b in badges if b not in ("SKT", "KT", "LGT", "LGU+", "LTE", "5G")) or None,
+                     extra={"details": details or None, "label": " ".join(b for b in badges if b not in ("SKT", "KT", "LGT", "LGU+", "LTE", "5G")) or None,
                             "price_note": ref_txt or None})
 
 

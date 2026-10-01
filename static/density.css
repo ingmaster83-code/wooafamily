@@ -94,3 +94,43 @@ h1{font-size:1.45rem}h2{font-size:1.02rem}.sh{font-size:1.08rem;margin:26px 0 10
 .pcar-dots{position:absolute;left:0;right:0;bottom:10px;display:flex;justify-content:center;gap:6px}
 .pcar-dot{width:7px;height:7px;border-radius:50%;border:0;padding:0;background:#d1d5db;cursor:pointer}.pcar-dot.on{background:var(--brand);width:18px;border-radius:4px}
 @media(max-width:520px){.pcar-s{padding:4px 26px;gap:12px}.pcar-img{flex-basis:92px;width:92px;height:92px}}
+
+/* 갈아타기 절약 계산기 */
+.calc-form{margin-top:12px}.cgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.cgrid label{display:flex;flex-direction:column;gap:6px;font-size:.84rem;font-weight:700;color:var(--sub)}
+.cgrid select,.cgrid input[type=number]{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:10px;font:inherit;font-size:.95rem;background:#fff;color:var(--fg)}
+.cgrid .in{position:relative;display:block}.cgrid .in input{padding-right:34px}.cgrid .in i{position:absolute;right:12px;top:50%;transform:translateY(-50%);font-style:normal;color:var(--mute);font-weight:600}
+.cgrid .chips{margin:0;gap:6px}.cgrid .chip{padding:4px 11px;font-size:.78rem;cursor:pointer}
+.copts{display:flex;gap:18px;flex-wrap:wrap;margin-top:12px}.ck{display:flex;align-items:center;gap:7px;font-size:.88rem;cursor:pointer}.ck input{accent-color:var(--brand);width:16px;height:16px}
+.calc-sum{margin:14px 0;padding:18px 20px;border-radius:var(--r);background:var(--brand-bg);display:flex;flex-direction:column;gap:3px}
+.calc-sum b{font-size:1.35rem;letter-spacing:-.03em;color:var(--brand-d)}.calc-sum span{font-size:.88rem;color:var(--sub)}
+.cs{margin-top:2px;font-size:.78rem;font-weight:800;color:var(--mute)}.cs.plus{color:var(--brand-d)}
+#calc-out .list.static{margin-bottom:8px}
+
+/* 절약 계산기 배너 */
+.calc-banner{display:flex;align-items:center;gap:14px;padding:14px 18px;margin:12px 0;border-radius:14px;background:var(--brand-bg);border:1px solid #bbf7d0;transition:.15s}
+.calc-banner:hover{border-color:var(--brand);box-shadow:0 8px 24px rgba(16,185,129,.14)}
+.cb-ic{font-size:1.6rem}.cb-t{flex:1;min-width:0;display:flex;flex-direction:column;gap:1px}.cb-t b{font-size:.98rem;letter-spacing:-.02em}
+.cb-t span{font-size:.82rem;color:var(--sub)}.cb-go{flex:0 0 auto;padding:8px 14px;border-radius:10px;background:var(--brand);color:#fff;font-size:.84rem;font-weight:800;white-space:nowrap}
+.pp-side .calc-banner{flex-wrap:wrap}.pp-side .cb-go{width:100%;text-align:center}
+@media(max-width:600px){.calc-banner{flex-wrap:wrap}.cb-go{width:100%;text-align:center}}
+
+/* 요금제 추가 정보 */
+.xgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-top:10px}
+.xi{padding:12px 14px;border-radius:12px;background:var(--soft)}.xi.wide{grid-column:1/-1}
+.xi span{display:block;font-size:.76rem;color:var(--mute);margin-bottom:2px}.xi b{font-size:.9rem;line-height:1.5;font-weight:600;word-break:keep-all}
+.note.warn{background:var(--warn-bg);color:var(--warn)}
+
+/* 공유 버튼 */
+.crumbs-row{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:nowrap}.crumbs-row .crumbs{min-width:0;flex:1}
+.share{position:relative;flex:0 0 auto;padding-top:10px}
+.share-b{display:inline-flex;align-items:center;gap:5px;padding:6px 13px;border:1px solid var(--line);border-radius:999px;background:#fff;color:var(--sub);font:inherit;font-size:.82rem;font-weight:700;cursor:pointer}
+.share-b:hover{border-color:var(--brand);color:var(--brand-d)}.share-ic{font-size:.95rem;line-height:1}
+.share-m{position:absolute;right:0;top:calc(100% + 4px);z-index:30;min-width:160px;padding:6px;background:#fff;border:1px solid var(--line);border-radius:12px;box-shadow:0 12px 32px rgba(17,24,39,.14)}
+.share-m[hidden]{display:none}
+.share-m a,.share-m button{display:block;width:100%;text-align:left;padding:9px 12px;border:0;border-radius:8px;background:none;font:inherit;font-size:.88rem;color:var(--fg);cursor:pointer}
+.share-m a:hover,.share-m button:hover{background:var(--soft)}
+.share-toast{position:absolute;right:0;top:calc(100% + 4px);padding:7px 12px;border-radius:8px;background:#111827;color:#fff;font-size:.8rem;white-space:nowrap;z-index:31}
+.share-toast[hidden]{display:none}
+.share-fab{position:fixed;right:16px;bottom:18px;padding:0;z-index:40}.share-fab .share-b{box-shadow:0 6px 18px rgba(17,24,39,.18);padding:9px 16px}
+.share-fab .share-m{top:auto;bottom:calc(100% + 6px)}.share-fab .share-toast{top:auto;bottom:calc(100% + 6px)}

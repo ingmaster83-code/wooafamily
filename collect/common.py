@@ -51,6 +51,27 @@ def is_5g_name(name):
     return bool(re.search(r"(?<![0-9A-Za-z])5G(?![A-Za-z0-9])", name or ""))
 
 
+def parse_overage(text):
+    """원문 안내에서 초과 요금(음성·영상·문자·데이터)을 뽑아 사람이 읽는 한 줄로 만든다."""
+    parts = []
+    m = re.search(r"음성통화는?\s*1초당\s*([\d.]+)원", text)
+    if m:
+        parts.append(f"음성 {m.group(1)}원/초")
+    m = re.search(r"영상통화는?\s*1초당\s*([\d.]+)원", text)
+    if m:
+        parts.append(f"영상 {m.group(1)}원/초")
+    m = re.search(r"SMS[^:：]{0,30}[:：]\s*([\d.]+)원", text)
+    if m:
+        parts.append(f"문자(SMS) {m.group(1)}원")
+    m = re.search(r"LMS[^:：]{0,30}[:：]\s*([\d.]+)원", text)
+    if m:
+        parts.append(f"LMS {m.group(1)}원")
+    m = re.search(r"1MB당\s*([\d.]+)원", text)
+    if m:
+        parts.append(f"데이터 {m.group(1)}원/MB")
+    return " · ".join(parts) or None
+
+
 def parse_data(raw):
     """데이터 문구 -> (월 기본 GB, 일 GB, 무제한 여부, 소진 후 속도)."""
     raw = raw or ""

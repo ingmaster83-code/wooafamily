@@ -33,7 +33,7 @@ def short(d, link=None):
 
 def row_html(d, links, esc):
     st, g = STORE_SLUG[d["store"]], GROUP.get(d["promo"], d["promo"])
-    img = (f'<img class="d-img" loading="lazy" referrerpolicy="no-referrer" src="{esc(d["image"])}" alt="">' if d.get("image") and SHOW_IMAGES and d["store"] != "세븐일레븐" else '<span class="d-img ph"></span>')
+    img = (f'<img class="d-img" loading="lazy" referrerpolicy="no-referrer" src="{esc(d["image"])}" alt="{esc(d["name"])}">' if d.get("image") and SHOW_IMAGES and d["store"] != "세븐일레븐" else '<span class="d-img ph"></span>')
     lp, up = d["list_price"], d["unit_price"]
     if d["promo"] in ("1+1", "2+1", "3+1"):
         price = (f'<span class="d-list">정가 {won(lp)}</span><b class="d-unit">개당 {won(up)}</b>'
@@ -95,7 +95,10 @@ def build_deals(ctx):
         sel = sorted(sel, key=sort_key)
         n = len(sel)
         rates = [d["discount_rate"] for d in sel if d["discount_rate"]]
-        title = f"{title_label} 행사 상품 {n}개 — 정가·개당 가격 비교 | {C.SITE_NAME}"
+        if path == SEC + "/":
+            title = f"편의점 1+1·2+1 행사 모음 {ym} — CU·세븐일레븐·이마트24 개당 가격 비교 {n}개 | {C.SITE_NAME}"
+        else:
+            title = f"{title_label} 행사 상품 {n}개 ({ym}) — 정가·개당 가격 비교 | {C.SITE_NAME}"
         desc = (f"{title_label} 행사상품 {n}개를 정가와 실질 개당 가격으로 비교하세요. "
                 f"{ym} 기준 각 매장 공식 정보." + (f" 평균 {round(sum(rates) / len(rates))}% 할인." if rates else ""))
         bc, bld = crumbs(crumb_items or [("/", "홈"), (None, title_label)])
@@ -156,7 +159,7 @@ def build_deals(ctx):
         for s_, lst in by_ev.items():
             items = "".join(
                 f'<a class="evc" href="{esc(e["url"])}" rel="nofollow noopener" target="_blank">'
-                + (f'<img class="evc-img" loading="lazy" referrerpolicy="no-referrer" src="{esc(e["image"])}" alt="">' if e.get("image") else '<span class="evc-img ph"></span>')
+                + (f'<img class="evc-img" loading="lazy" referrerpolicy="no-referrer" src="{esc(e["image"])}" alt="{esc(e["title"])}">' if e.get("image") else '<span class="evc-img ph"></span>')
                 + f'<span class="evc-m"><b>{esc(e["title"])}</b><span class="muted sm">{esc(e["period"])}</span></span></a>' for e in lst)
             cards.append(f'<section class="card"><h2><span class="stb {STORE_SLUG[s_]}">{esc(s_)}</span> 진행 중 이벤트·기획전 {len(lst)}개</h2><div class="evcs">{items}</div></section>')
         bc, bld = crumbs([("/", "홈"), (SEC + "/", "편의점·마트 행사"), (None, "이벤트")])
