@@ -192,7 +192,7 @@ def crumbs(items):
     return f'<nav class="crumbs">{out}</nav>', ld
 
 
-def coupang():
+def coupang_generic():
     if not C.COUPANG_ENABLED:
         return ""
     return ('<section class="card coupang"><h2>알뜰폰과 함께 쓰면 좋은 자급제폰</h2>'
@@ -314,6 +314,29 @@ def plan_cards(plans):
 
 
 CARDS = []
+PHONES = {}
+
+
+def phone_rank_box():
+    items = PHONES.get("items") or []
+    if not items:
+        return ""
+    rows = "".join(
+        f'<a class="pr" href="{esc(p["url"])}" rel="nofollow sponsored noopener" target="_blank">'
+        f'<span class="pr-n n{p["rank"]}">{p["rank"]}</span>'
+        f'{("<img class=pr-img referrerpolicy=no-referrer src=" + chr(34) + esc(p["image"]) + chr(34) + " alt=>") if p.get("image") else "<span class=pr-img></span>"}'
+        f'<span class="pr-m"><b>{esc(p["name"])}</b><span class="pr-p">{p["price"]:,}원{" <i>로켓배송</i>" if p.get("rocket") else ""}</span></span>'
+        f'<span class="pr-go">온라인 가격비교 ↗</span></a>' for p in items)
+    return ('<section class="card phones"><h2>알뜰폰과 함께 쓰는 자급제폰 TOP 10</h2>'
+            f'<p class="muted sm">쿠팡 검색 랭킹 기준 인기 자급제폰입니다(판매량 순위가 아님). {esc(PHONES.get("fetched_at", "")[:16])} 확인 · 가격은 수시로 바뀔 수 있어요.</p>'
+            f'<div class="prs">{rows}</div>'
+            '<p class="fine">‘온라인 가격비교’ 링크는 쿠팡 파트너스 활동의 일환으로, 이를 통해 구매가 이루어지면 일정액의 수수료를 제공받을 수 있습니다.</p></section>')
+
+
+def coupang():
+    return phone_rank_box() or coupang_generic()
+
+
 
 
 def cards_for(carrier=None, network=None):
@@ -399,6 +422,10 @@ def build():
     stamp = max(p["fetched_at"] for p in plans)
     ymd = stamp[:10]
     ym = f"{int(ymd[:4])}년 {int(ymd[5:7])}월"
+    pp = os.path.join(HERE, "data", "phones.json")
+    PHONES.clear()
+    if os.path.exists(pp):
+        PHONES.update(json.load(open(pp, encoding="utf-8")))
     cp = os.path.join(HERE, "data", "cards.json")
     CARDS[:] = [c for c in json.load(open(cp, encoding="utf-8"))] if os.path.exists(cp) else []
     n_carrier = len(set(p["carrier"] for p in plans))
@@ -655,7 +682,7 @@ def build():
     # --- 편의점·마트 행사 섹션
     import build_deal
     build_deal.build_deals({"esc": esc, "C": C, "write": write, "head": head, "header": header, "footer": footer,
-                            "crumbs": crumbs, "coupang": coupang, "HERE": HERE, "OUT": OUT, "stamp": stamp, "ymd": ymd})
+                            "crumbs": crumbs, "coupang": coupang_generic, "HERE": HERE, "OUT": OUT, "stamp": stamp, "ymd": ymd})
 
     # --- sitemap / robots / 404
     urls = "".join(f"<url><loc>{C.DOMAIN}{u}</loc><lastmod>{ymd}</lastmod></url>" for u in pages)

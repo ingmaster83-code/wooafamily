@@ -63,3 +63,17 @@ h1{font-size:1.45rem}h2{font-size:1.02rem}.sh{font-size:1.08rem;margin:26px 0 10
 @media(max-width:520px){.svcs.c{grid-template-columns:1fr}.svc-b .muted{white-space:normal}}
 
 @media(max-width:900px){.rf>b{flex:0 0 auto;padding-top:0}}
+
+/* 자급제폰 TOP 10 */
+.phones h2{margin-bottom:2px}.phones .muted{margin:0 0 10px}
+.prs{display:flex;flex-direction:column}
+.pr{display:flex;align-items:center;gap:12px;padding:10px 4px;border-bottom:1px solid var(--line)}
+.pr:last-child{border-bottom:0}.pr:hover{background:var(--soft)}
+.pr-n{flex:0 0 26px;height:26px;border-radius:8px;background:var(--soft);color:var(--sub);font-weight:800;font-size:.85rem;display:grid;place-items:center}
+.pr-n.n1,.pr-n.n2,.pr-n.n3{background:var(--brand);color:#fff}
+.pr-img{flex:0 0 56px;width:56px;height:56px;object-fit:contain;border-radius:10px;background:#fff;border:1px solid var(--line)}
+.pr-m{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.pr-m b{font-size:.88rem;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.pr-p{font-size:.92rem;font-weight:800;letter-spacing:-.02em}.pr-p i{font-style:normal;font-size:.7rem;color:var(--brand-d);margin-left:4px;font-weight:700}
+.pr-go{flex:0 0 auto;padding:6px 10px;border-radius:8px;background:var(--brand);color:#fff;font-size:.74rem;font-weight:800;white-space:nowrap}
+@media(max-width:520px){.pr-go{display:none}.pr{gap:10px}}

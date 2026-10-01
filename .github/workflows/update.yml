@@ -48,6 +48,13 @@ jobs:
         run: python collect/deal/coupang_links.py
         continue-on-error: true
 
+      - name: 쿠팡 자급제폰 TOP 10 (키가 없으면 건너뜀)
+        env:
+          COUPANG_ACCESS_KEY: ${{ secrets.COUPANG_ACCESS_KEY }}
+          COUPANG_SECRET_KEY: ${{ secrets.COUPANG_SECRET_KEY }}
+        run: python collect/deal/coupang_phones.py
+        continue-on-error: true
+
       - name: 사이트 빌드
         run: python build.py
 
