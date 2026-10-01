@@ -77,3 +77,20 @@ h1{font-size:1.45rem}h2{font-size:1.02rem}.sh{font-size:1.08rem;margin:26px 0 10
 .pr-p{font-size:.92rem;font-weight:800;letter-spacing:-.02em}.pr-p i{font-style:normal;font-size:.7rem;color:var(--brand-d);margin-left:4px;font-weight:700}
 .pr-go{flex:0 0 auto;padding:6px 10px;border-radius:8px;background:var(--brand);color:#fff;font-size:.74rem;font-weight:800;white-space:nowrap}
 @media(max-width:520px){.pr-go{display:none}.pr{gap:10px}}
+
+/* 홈 자급제폰 슬라이드 */
+.pcar{position:relative;padding:12px 14px 30px;overflow:hidden}
+.pcar-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.pcar-track::-webkit-scrollbar{display:none}
+.pcar-s{flex:0 0 100%;scroll-snap-align:start;display:flex;align-items:center;gap:16px;min-width:0;padding:4px 30px}
+.pcar-img{flex:0 0 112px;width:112px;height:112px;object-fit:contain;border-radius:14px;background:#fff;border:1px solid var(--line)}
+.pcar-m{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px;align-items:flex-start}
+.pcar-rank{padding:2px 9px;border-radius:7px;background:var(--brand);color:#fff;font-size:.72rem;font-weight:800}
+.pcar-m b{font-size:.93rem;line-height:1.35;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.pcar-p{font-size:1.15rem;font-weight:800;letter-spacing:-.03em}.pcar-p i{font-style:normal;font-size:.7rem;color:var(--brand-d);margin-left:5px;font-weight:700}
+.pcar-go{margin-top:3px;padding:6px 12px;border-radius:9px;background:var(--brand);color:#fff;font-size:.76rem;font-weight:800}
+.pcar-arrow{position:absolute;top:50%;transform:translateY(-62%);width:28px;height:28px;border-radius:50%;border:1px solid var(--line);background:#fff;font-size:1.1rem;line-height:1;cursor:pointer;color:var(--sub);z-index:2}
+.pcar-arrow:hover{border-color:var(--brand);color:var(--brand-d)}.pcar-prev{left:6px}.pcar-next{right:6px}
+.pcar-dots{position:absolute;left:0;right:0;bottom:10px;display:flex;justify-content:center;gap:6px}
+.pcar-dot{width:7px;height:7px;border-radius:50%;border:0;padding:0;background:#d1d5db;cursor:pointer}.pcar-dot.on{background:var(--brand);width:18px;border-radius:4px}
+@media(max-width:520px){.pcar-s{padding:4px 26px;gap:12px}.pcar-img{flex-basis:92px;width:92px;height:92px}}

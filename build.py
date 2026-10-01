@@ -153,10 +153,11 @@ def head(title, desc, path, ld=None, noindex=False):
            f'crossorigin="anonymous"></script>') if C.ADSENSE_CLIENT else ""
     ldj = "".join(f'<script type="application/ld+json">{json.dumps(x, ensure_ascii=False)}</script>' for x in (ld or []))
     robots = '<meta name="robots" content="noindex,follow">' if noindex else ""
+    verify = f'<meta name="naver-site-verification" content="{C.NAVER_SITE_VERIFICATION}">' if getattr(C, "NAVER_SITE_VERIFICATION", "") else ""
     return (f'<!doctype html><html lang="ko"><head><meta charset="utf-8">'
             f'<meta name="viewport" content="width=device-width,initial-scale=1">'
             f'<title>{esc(title)}</title><meta name="description" content="{esc(desc)}">'
-            f'<link rel="canonical" href="{url}">{robots}'
+            f'<link rel="canonical" href="{url}">{robots}{verify}'
             f'<meta property="og:type" content="website"><meta property="og:title" content="{esc(title)}">'
             f'<meta property="og:description" content="{esc(desc)}"><meta property="og:url" content="{url}">'
             f'<meta property="og:site_name" content="{C.SITE_NAME}"><meta property="og:locale" content="ko_KR">'
@@ -195,8 +196,8 @@ def crumbs(items):
 def coupang_generic():
     if not C.COUPANG_ENABLED:
         return ""
-    return ('<section class="card coupang"><h2>알뜰폰과 함께 쓰면 좋은 자급제폰</h2>'
-            '<p class="muted">자급제폰 + 알뜰폰 조합이 통신비를 가장 많이 줄여줘요.</p>'
+    return ('<section class="card coupang"><h2>함께 보면 좋은 쿠팡 추천 상품</h2>'
+            '<p class="muted">관심 상품을 기반으로 한 쿠팡 추천입니다.</p>'
             '<script src="https://ads-partners.coupang.com/g.js"></script>'
             f'<script>new PartnersCoupang.G({{"id":{C.COUPANG_ID},"trackingCode":"{C.COUPANG_TRACKING}",'
             '"subId":"wooafamily","template":"carousel","width":"680","height":"140"});</script>'
@@ -315,6 +316,26 @@ def plan_cards(plans):
 
 CARDS = []
 PHONES = {}
+
+
+def phone_carousel():
+    items = PHONES.get("items") or []
+    if not items:
+        return ""
+    slides = "".join(
+        f'<a class="pcar-s" href="{esc(p["url"])}" rel="nofollow sponsored noopener" target="_blank">'
+        f'{("<img class=pcar-img referrerpolicy=no-referrer src=" + chr(34) + esc(p["image"]) + chr(34) + " alt=>") if p.get("image") else "<span class=pcar-img></span>"}'
+        f'<span class="pcar-m"><span class="pcar-rank">인기 {p["rank"]}위</span><b>{esc(p["name"])}</b>'
+        f'<span class="pcar-p">{p["price"]:,}원{" <i>로켓배송</i>" if p.get("rocket") else ""}</span>'
+        f'<span class="pcar-go">온라인 가격비교 ↗</span></span></a>' for p in items)
+    dots = "".join(f'<button type="button" class="pcar-dot{" on" if k == 0 else ""}" aria-label="{k + 1}번째"></button>' for k in range(len(items)))
+    return ('<h2 class="sh">알뜰폰과 함께 쓰는 자급제폰</h2>'
+            f'<div class="card tight pcar" id="pcar"><div class="pcar-track">{slides}</div>'
+            f'<button type="button" class="pcar-arrow pcar-prev" aria-label="이전">‹</button>'
+            f'<button type="button" class="pcar-arrow pcar-next" aria-label="다음">›</button>'
+            f'<div class="pcar-dots">{dots}</div></div>'
+            f'<p class="fine">쿠팡 검색 랭킹 기준(판매량 순위가 아님) · {esc(PHONES.get("fetched_at", "")[:10])} 확인 · '
+            '‘온라인 가격비교’ 링크는 쿠팡 파트너스 활동의 일환으로 일정액의 수수료를 제공받을 수 있습니다.</p>')
 
 
 def phone_rank_box():
@@ -436,7 +457,7 @@ def build():
         fp = os.path.join(OUT, name)
         shutil.rmtree(fp, ignore_errors=True) if os.path.isdir(fp) else os.remove(fp)
     open(os.path.join(OUT, "CNAME"), "w", encoding="utf-8").write(C.DOMAIN.replace("https://", "") + "\n")
-    for f in ("style.css", "density.css", "deal.css", "deal.js", "finder.js"):
+    for f in ("style.css", "density.css", "deal.css", "deal.js", "finder.js", "pcar.js"):
         shutil.copy(os.path.join(HERE, "static", f), os.path.join(OUT, f))
 
     by_axis = {a: defaultdict(list) for a in AXES}
@@ -648,10 +669,10 @@ def build():
           f'<div class="cols"><section class="col-l"><h2 class="sh">평생 할인 최저가 TOP 8</h2><div class="hl">{plan_rows(life_top[:8])}</div>'
           f'<p class="more"><a href="{SEC}/discount/lifetime/">평생 할인 요금제 {n_life}개 전체 보기 →</a></p></section>'
           f'<section class="col-r"><h2 class="sh">조건으로 찾기</h2><div class="card tight">{"".join(hq)}</div>'
-          f'<h2 class="sh">통신사별 요금제</h2><div class="card tight cls">{car_list}</div></section></div>'
+          f'{phone_carousel()}<h2 class="sh">통신사별 요금제</h2><div class="card tight cls">{car_list}</div></section></div>'
           f'<section class="trust c"><div><b>공식 정보만</b><p>통신사 공식 홈페이지 정보만 수집하고 원문 링크·확인 시각을 표시해요.</p></div>'
           f'<div><b>순서는 요금 기준</b><p>광고·제휴와 무관하게 장기 월 요금 낮은 순으로 정렬해요.</p></div>'
-          f'<div><b>하루 여러 번 갱신</b><p>자동으로 다시 확인해 바뀐 요금을 빠르게 반영해요.</p></div></section></main>' + footer(stamp))
+          f'<div><b>하루 여러 번 갱신</b><p>자동으로 다시 확인해 바뀐 요금을 빠르게 반영해요.</p></div></section></main>' + footer(stamp).replace("</body>", '<script src="/pcar.js"></script></body>'))
 
     # --- 소개 / 개인정보
     about = ('<main class="wrap narrow"><h1 class="ph">서비스 소개 · 수집 정책</h1><section class="card prose">'

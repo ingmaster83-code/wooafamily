@@ -2,9 +2,9 @@
 (function () {
   var box = document.getElementById("dctl"), list = document.getElementById("dlist");
   if (!box || !list) return;
-  var st = { q: "", store: box.dataset.store || "", group: box.dataset.group || "", sort: "rec" };
+  var st = { q: "", store: box.dataset.store || "", group: box.dataset.group || "", cat: box.dataset.cat || "", sort: "rec" };
   var data = null, shown = 40, STEP = 40;
-  var ST = { cu: "CU", seven: "세븐일레븐", emart24: "이마트24", homeplus: "홈플러스" };
+  var ST = { cu: "CU", seven: "세븐일레븐", emart24: "이마트24", homeplus: "홈플러스", everyday: "이마트에브리데이" };
   var GL = { "1plus1": "1+1", "2plus1": "2+1", "3plus1": "3+1", sale: "세일·할인", card: "카드할인", flyer: "전단 특가", pick: "골라담기" };
   function won(v) { return v == null ? "-" : v.toLocaleString("ko-KR") + "원"; }
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
@@ -34,7 +34,7 @@
     if (reset) shown = STEP;
     var q = st.q.trim().toLowerCase();
     var vis = data.filter(function (d) {
-      return (!st.store || d.s === st.store) && (!st.group || d.g === st.group) && (!q || d.n.toLowerCase().indexOf(q) >= 0);
+      return (!st.store || d.s === st.store) && (!st.group || d.g === st.group) && (!st.cat || d.c === st.cat) && (!q || d.n.toLowerCase().indexOf(q) >= 0);
     }).sort(sorters[st.sort]);
     list.innerHTML = vis.slice(0, shown).map(row).join("");
     document.getElementById("dcnt").textContent = vis.length;
@@ -44,15 +44,15 @@
   }
   // 컨트롤 초기 상태를 페이지 프리셋에 맞춤
   function sync() {
-    box.querySelectorAll(".seg").forEach(function (seg) {
-      var k = seg.dataset.k === "dstore" ? st.store : st.group;
+    box.querySelectorAll(".seg, .dcat").forEach(function (seg) {
+      var k = seg.dataset.k === "dstore" ? st.store : seg.dataset.k === "dgroup" ? st.group : st.cat;
       seg.querySelectorAll("button").forEach(function (b) { b.classList.toggle("on", b.dataset.v === k); });
     });
   }
-  box.querySelectorAll(".seg").forEach(function (seg) {
+  box.querySelectorAll(".seg, .dcat").forEach(function (seg) {
     seg.addEventListener("click", function (e) {
       var b = e.target.closest("button"); if (!b) return;
-      if (seg.dataset.k === "dstore") st.store = b.dataset.v; else st.group = b.dataset.v;
+      if (seg.dataset.k === "dstore") st.store = b.dataset.v; else if (seg.dataset.k === "dgroup") st.group = b.dataset.v; else st.cat = b.dataset.v;
       sync(); render(true);
     });
   });

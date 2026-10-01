@@ -1,0 +1,410 @@
+[
+ {
+  "store": "세븐일레븐",
+  "title": "2026년 10월 와인",
+  "period": "2026-10-01 ~ 2026-10-15",
+  "image": null,
+  "url": "https://www.7-eleven.co.kr/event/eventList.asp",
+  "fetched_at": "2026-10-01 21:59"
+ },
+ {
+  "store": "세븐일레븐",
+  "title": "2026년 10월 타임세일",
+  "period": "2026-10-01 ~ 2026-10-31",
+  "image": null,
+  "url": "https://www.7-eleven.co.kr/event/eventList.asp",
+  "fetched_at": "2026-10-01 21:59"
+ },
+ {
+  "store": "세븐일레븐",
+  "title": "2026년 10월 호빵",
+  "period": "2026-10-01 ~ 2026-10-31",
+  "image": null,
+  "url": "https://www.7-eleven.co.kr/event/eventList.asp",
+  "fetched_at": "2026-10-01 21:59"
+ },
+ {
+  "store": "세븐일레븐",
+  "title": "2026년 10월 구슬아이스크림",
+  "period": "2026-10-01 ~ 2026-10-31",
+  "image": null,
+  "url": "https://www.7-eleven.co.kr/event/eventList.asp",
+  "fetched_at": "2026-10-01 21:59"
+ },
+ {
+  "store": "세븐일레븐",
+  "title": "2026년 10월 당근세카",
+  "period": "2026-10-01 ~ 2026-10-31",
+  "image": null,
+  "url": "https://www.7-eleven.co.kr/event/eventList.asp",
+  "fetched_at": "2026-10-01 21:59"
+ },
+ {
+  "store": "세븐일레븐",
+  "title": "2026년 10월 유니폼&모자",
+  "period": "2026-10-01 ~ 2026-10-31",
+  "image": null,
+  "url": "https://www.7-eleven.co.kr/event/eventList.asp",
+  "fetched_at": "2026-10-01 21:59"
+ },
+ {
+  "store": "세븐일레븐",
+  "title": "2026년 10월 세이브세일",
+  "period": "2026-10-01 ~ 2026-10-15",
+  "image": null,
+  "url": "https://www.7-eleven.co.kr/event/eventList.asp",
+  "fetched_at": "2026-10-01 21:59"
+ },
+ {
+  "store": "세븐일레븐",
+  "title": "2026년 10월 치킨",
+  "period": "2026-10-01 ~ 2026-10-31",
+  "image": null,
+  "url": "https://www.7-eleven.co.kr/event/eventList.asp",
+  "fetched_at": "2026-10-01 21:59"
+ },
+ {
+  "store": "이마트24",
+  "title": "10월 옐로우 리뉴얼 이벤트",
+  "period": "2026-10-01 ~ 2026-10-31",
+  "image": "https://emart24.co.kr/image/Mjc5NjQ0",
+  "url": "https://emart24.co.kr/event/8279",
+  "fetched_at": "2026-10-01 21:59"
+ },
+ {
+  "store": "이마트24",
+  "title": "10월 보틀오더 쿠폰 할인 모아보기!",
+  "period": "2026-10-01 ~ 2026-10-31",
+  "image": "https://emart24.co.kr/image/Mjc5NjI2",
+  "url": "https://emart24.co.kr/event/8272",
+  "fetched_at": "2026-10-01 21:59"
+ },
+ {
+  "store": "이마트24",
+  "title": "이마트24 플래그십 스토어 트렌드랩 성수점",
+  "period": "2026-10-01 ~ 2026-10-31",
+  "image": "https://emart24.co.kr/image/Mjc5NjM1",
+  "url": "https://emart24.co.kr/event/8271",
+  "fetched_at": "2026-10-01 21:59"
+ },
+ {
+  "store": "이마트24",
+  "title": "10월 BC/NH카드 할인 이벤트",
+  "period": "2026-10-01 ~ 2026-10-31",
+  "image": "https://emart24.co.kr/image/Mjc5NjUx",
+  "url": "https://emart24.co.kr/event/8270",
+  "fetched_at": "2026-10-01 21:59"
+ },
+ {
+  "store": "이마트24",
+  "title": "10월 신상 신선식품 사전예약 이벤트",
+  "period": "2026-10-01 ~ 2026-10-31",
+  "image": "https://emart24.co.kr/image/Mjc5NjAz",
+  "url": "https://emart24.co.kr/event/8269",
+  "fetched_at": "2026-10-01 21:59"
+ },
+ {
+  "store": "이마트24",
+  "title": "10월 ALLDAY 건강&뷰티 이벤트",
+  "period": "2026-10-01 ~ 2026-10-31",
+  "image": "https://emart24.co.kr/image/Mjc5NTk5",
+  "url": "https://emart24.co.kr/event/8268",
+  "fetched_at": "2026-10-01 21:59"
+ },
+ {
+  "store": "이마트24",
+  "title": "10월 24오락실 이벤트",
+  "period": "2026-10-01 ~ 2026-10-31",
+  "image": "https://emart24.co.kr/image/Mjc5NTk1",
+  "url": "https://emart24.co.kr/event/8267",
+  "fetched_at": "2026-10-01 21:59"
+ },
+ {
+  "store": "이마트24",
+  "title": "10월 월간 도시락 이벤트",
+  "period": "2026-10-01 ~ 2026-10-31",
+  "image": "https://emart24.co.kr/image/Mjc5NTkx",
+  "url": "https://emart24.co.kr/event/8266",
+  "fetched_at": "2026-10-01 21:59"
+ },
+ {
+  "store": "이마트24",
+  "title": "10월 뽀니 오늘픽업 이벤트",
+  "period": "2026-09-30 ~ 2026-10-31",
+  "image": "https://emart24.co.kr/image/Mjc5NTg3",
+  "url": "https://emart24.co.kr/event/8265",
+  "fetched_at": "2026-10-01 21:59"
+ },
+ {
+  "store": "이마트24",
+  "title": "10월 CJ ONE 원더위크 이벤트",
+  "period": "2026-10-01 ~ 2026-10-11",
+  "image": "https://emart24.co.kr/image/Mjc5NjMz",
+  "url": "https://emart24.co.kr/event/8264",
+  "fetched_at": "2026-10-01 21:59"
+ },
+ {
+  "store": "이마트24",
+  "title": "10월 웰니스 상품 할인 이벤트",
+  "period": "2026-10-01 ~ 2026-10-31",
+  "image": "https://emart24.co.kr/image/Mjc5NTcy",
+  "url": "https://emart24.co.kr/event/8263",
+  "fetched_at": "2026-10-01 21:59"
+ },
+ {
+  "store": "이마트24",
+  "title": "10월 월간 신상 하이라이트 이벤트",
+  "period": "2026-10-01 ~ 2026-10-31",
+  "image": "https://emart24.co.kr/image/Mjc5NTY4",
+  "url": "https://emart24.co.kr/event/8262",
+  "fetched_at": "2026-10-01 21:59"
+ },
+ {
+  "store": "이마트24",
+  "title": "10월 샌드위치 할인 이벤트",
+  "period": "2026-10-01 ~ 2026-10-31",
+  "image": "https://emart24.co.kr/image/Mjc5NjM5",
+  "url": "https://emart24.co.kr/event/8261",
+  "fetched_at": "2026-10-01 21:59"
+ },
+ {
+  "store": "이마트24",
+  "title": "10월 CJ 브랜드페스타 이벤트",
+  "period": "2026-10-01 ~ 2026-10-31",
+  "image": "https://emart24.co.kr/image/Mjc5NTYw",
+  "url": "https://emart24.co.kr/event/8260",
+  "fetched_at": "2026-10-01 21:59"
+ },
+ {
+  "store": "이마트24",
+  "title": "10월 돈아낄팁 이벤트",
+  "period": "2026-10-01 ~ 2026-10-31",
+  "image": "https://emart24.co.kr/image/Mjc5NTU2",
+  "url": "https://emart24.co.kr/event/8259",
+  "fetched_at": "2026-10-01 21:59"
+ },
+ {
+  "store": "이마트24",
+  "title": "10월 인기 애니 피규어 사전예약 이벤트",
+  "period": "2026-10-01 ~ 2026-10-31",
+  "image": "https://emart24.co.kr/image/Mjc5NDU5",
+  "url": "https://emart24.co.kr/event/8240",
+  "fetched_at": "2026-10-01 21:59"
+ },
+ {
+  "store": "이마트24",
+  "title": "10월 크리넥스 사전예약 이벤트",
+  "period": "2026-10-01 ~ 2026-10-31",
+  "image": "https://emart24.co.kr/image/Mjc5NDE2",
+  "url": "https://emart24.co.kr/event/8220",
+  "fetched_at": "2026-10-01 21:59"
+ },
+ {
+  "store": "이마트24",
+  "title": "10월 신규가입 이벤트",
+  "period": "2026-10-01 ~ 2026-10-15",
+  "image": "https://emart24.co.kr/image/Mjc5NDEw",
+  "url": "https://emart24.co.kr/event/8219",
+  "fetched_at": "2026-10-01 21:59"
+ },
+ {
+  "store": "이마트24",
+  "title": "10월 앱 통합바코드 프로모션",
+  "period": "2026-10-01 ~ 2026-10-31",
+  "image": "https://emart24.co.kr/image/Mjc5MzUx",
+  "url": "https://emart24.co.kr/event/8199",
+  "fetched_at": "2026-10-01 21:59"
+ },
+ {
+  "store": "이마트24",
+  "title": "10월 제휴이벤트",
+  "period": "2026-10-01 ~ 2026-10-31",
+  "image": "https://emart24.co.kr/image/Mjc5MzEx",
+  "url": "https://emart24.co.kr/event/8180",
+  "fetched_at": "2026-10-01 21:59"
+ },
+ {
+  "store": "이마트24",
+  "title": "이마트24 플래그십 스토어 트렌드랩 성수점",
+  "period": "2026-09-16 ~ 2026-10-15",
+  "image": "https://emart24.co.kr/image/Mjc5MTgx",
+  "url": "https://emart24.co.kr/event/8140",
+  "fetched_at": "2026-10-01 21:59"
+ },
+ {
+  "store": "이마트에브리데이",
+  "title": "전단기획전 e번주 전단행사 상품",
+  "period": "2026-10-01 ~ 2026-10-07",
+  "image": null,
+  "url": "https://emile.emarteveryday.co.kr/exhibition/ExhibitionView?uid=bKjFpmF2vyaVSccZdlrK",
+  "fetched_at": "2026-10-01 21:59"
+ },
+ {
+  "store": "이마트에브리데이",
+  "title": "전단기획전 행사카드로 전액 결제 시 할인",
+  "period": "2026-10-01 ~ 2026-10-07",
+  "image": null,
+  "url": "https://emile.emarteveryday.co.kr/exhibition/ExhibitionView?uid=onUQ7A8UOqPLuWMbUPCw",
+  "fetched_at": "2026-10-01 21:59"
+ },
+ {
+  "store": "이마트에브리데이",
+  "title": "전단기획전 골라담아 3봉 구매시 34% 할인",
+  "period": "2026-10-01 ~ 2026-10-01",
+  "image": null,
+  "url": "https://emile.emarteveryday.co.kr/exhibition/ExhibitionView?uid=fr5EqXOtBoKFxUkiw6po",
+  "fetched_at": "2026-10-01 21:59"
+ },
+ {
+  "store": "이마트에브리데이",
+  "title": "전단기획전 무이자 최대12개월+정품케이스100원",
+  "period": "2026-10-01 ~ 2026-10-05",
+  "image": null,
+  "url": "https://emile.emarteveryday.co.kr/exhibition/ExhibitionView?uid=sDaCUBP17L6PVh4WN0Lu",
+  "fetched_at": "2026-10-01 21:59"
+ },
+ {
+  "store": "이마트에브리데이",
+  "title": "전단기획전 무이자12개월+마그네틱 충전케이블 100원!",
+  "period": "2026-10-01 ~ 2026-10-05",
+  "image": null,
+  "url": "https://emile.emarteveryday.co.kr/exhibition/ExhibitionView?uid=s7cSiyQ3FrSdUvfUCKk4",
+  "fetched_at": "2026-10-01 21:59"
+ },
+ {
+  "store": "이마트에브리데이",
+  "title": "전단기획전 무이자12개월+USB 충전기 동시구매시 100원!",
+  "period": "2026-10-01 ~ 2026-10-05",
+  "image": null,
+  "url": "https://emile.emarteveryday.co.kr/exhibition/ExhibitionView?uid=HACd95eE97y5B9c6Oz1P",
+  "fetched_at": "2026-10-01 21:59"
+ },
+ {
+  "store": "이마트에브리데이",
+  "title": "전단기획전 🍊고래잇하게 맛있는 과일&채소🥝",
+  "period": "2026-10-01 ~ 2026-10-07",
+  "image": null,
+  "url": "https://emile.emarteveryday.co.kr/exhibition/ExhibitionView?uid=ITFgFh80r727fVD54DTP",
+  "fetched_at": "2026-10-01 21:59"
+ },
+ {
+  "store": "이마트에브리데이",
+  "title": "전단기획전 🥩취향따라 골라먹는 고래잇한 고기맛집 🎉",
+  "period": "2026-10-01 ~ 2026-10-07",
+  "image": null,
+  "url": "https://emile.emarteveryday.co.kr/exhibition/ExhibitionView?uid=6fxgGS47IZVL6In8RoqI",
+  "fetched_at": "2026-10-01 21:59"
+ },
+ {
+  "store": "이마트에브리데이",
+  "title": "전단기획전 🐟싱싱함이 남다른 이마일 SEAFOOD🍤",
+  "period": "2026-10-01 ~ 2026-10-07",
+  "image": null,
+  "url": "https://emile.emarteveryday.co.kr/exhibition/ExhibitionView?uid=fBlv35lTJ5c0xOpIYFxl",
+  "fetched_at": "2026-10-01 21:59"
+ },
+ {
+  "store": "이마트에브리데이",
+  "title": "전단기획전 🥟우리집 냉장고 가득 채워줄 고래잇템🍜",
+  "period": "2026-10-01 ~ 2026-10-07",
+  "image": null,
+  "url": "https://emile.emarteveryday.co.kr/exhibition/ExhibitionView?uid=Ia1Rtsu1xS4ZGQdl1Np3",
+  "fetched_at": "2026-10-01 21:59"
+ },
+ {
+  "store": "이마트에브리데이",
+  "title": "전단기획전 🥫쟁여놓기 좋은 고래잇한 템들만 모았다🍹",
+  "period": "2026-10-01 ~ 2026-10-07",
+  "image": null,
+  "url": "https://emile.emarteveryday.co.kr/exhibition/ExhibitionView?uid=dM174jMgXDKODfn0ydQ0",
+  "fetched_at": "2026-10-01 21:59"
+ },
+ {
+  "store": "이마트에브리데이",
+  "title": "전단기획전 🧻우리집 필수 생활용품은 고래잇페스타에서🧴",
+  "period": "2026-10-01 ~ 2026-10-07",
+  "image": null,
+  "url": "https://emile.emarteveryday.co.kr/exhibition/ExhibitionView?uid=HH1WiF8ZPB44PSA6OKp5",
+  "fetched_at": "2026-10-01 21:59"
+ },
+ {
+  "store": "이마트에브리데이",
+  "title": "전단기획전 크라운 1만원 구매시 배민 상품권 5천원 증정",
+  "period": "2026-10-01 ~ 2026-10-14",
+  "image": null,
+  "url": "https://emile.emarteveryday.co.kr/exhibition/ExhibitionView?uid=Kgmq3vTLkg5NRySXNsPG",
+  "fetched_at": "2026-10-01 21:59"
+ },
+ {
+  "store": "이마트에브리데이",
+  "title": "전단기획전 🧻생활용품 3만원이상 3천원 할인🎊",
+  "period": "2026-10-01 ~ 2026-10-07",
+  "image": null,
+  "url": "https://emile.emarteveryday.co.kr/exhibition/ExhibitionView?uid=uBsiUYrGBt2kwPq6QeMZ",
+  "fetched_at": "2026-10-01 21:59"
+ },
+ {
+  "store": "이마트에브리데이",
+  "title": "전단기획전 생활용품 최대 7,000원 추가할인",
+  "period": "2026-10-01 ~ 2026-10-14",
+  "image": null,
+  "url": "https://emile.emarteveryday.co.kr/exhibition/ExhibitionView?uid=p9iJmnCkel8FPSnt08lb",
+  "fetched_at": "2026-10-01 21:59"
+ },
+ {
+  "store": "이마트에브리데이",
+  "title": "전단기획전 🍺픽업 주문하면 더블혜택이 쏟아진다🍺",
+  "period": "2026-10-01 ~ 2026-10-07",
+  "image": null,
+  "url": "https://emile.emarteveryday.co.kr/exhibition/ExhibitionView?uid=SFwSStQwdmibCemFSzGi",
+  "fetched_at": "2026-10-01 21:59"
+ },
+ {
+  "store": "이마트에브리데이",
+  "title": "전단기획전 미리 구매하면 더 커지는 혜택! 이번주 사전예약",
+  "period": "2026-10-01 ~ 2026-10-07",
+  "image": null,
+  "url": "https://emile.emarteveryday.co.kr/exhibition/ExhibitionView?uid=yzqSlrFLvjpE6Pr3ux49",
+  "fetched_at": "2026-10-01 21:59"
+ },
+ {
+  "store": "이마트에브리데이",
+  "title": "전단기획전 행사카드 전액 결제 시 할인",
+  "period": "2026-10-01 ~ 2026-10-07",
+  "image": null,
+  "url": "https://emile.emarteveryday.co.kr/exhibition/ExhibitionView?uid=SUz9ojtebTgJVqNLaZJr",
+  "fetched_at": "2026-10-01 21:59"
+ },
+ {
+  "store": "이마트에브리데이",
+  "title": "전단기획전 가을 바람 불면 먹어야 하는 바다의 별미",
+  "period": "2026-10-01 ~ 2026-10-07",
+  "image": null,
+  "url": "https://emile.emarteveryday.co.kr/exhibition/ExhibitionView?uid=mz5jWMj8vdMevmV6SQHJ",
+  "fetched_at": "2026-10-01 21:59"
+ },
+ {
+  "store": "이마트에브리데이",
+  "title": "전단기획전 신선함을 그대로 담아 문앞까지 산지직송!",
+  "period": "2026-10-01 ~ 2026-10-07",
+  "image": null,
+  "url": "https://emile.emarteveryday.co.kr/exhibition/ExhibitionView?uid=vKGKcHgkHIsW7QG6D4L0",
+  "fetched_at": "2026-10-01 21:59"
+ },
+ {
+  "store": "이마트에브리데이",
+  "title": "전단기획전 인기 샌드위치 2종 각각 9,980원",
+  "period": "2026-10-01 ~ 2026-10-07",
+  "image": null,
+  "url": "https://emile.emarteveryday.co.kr/exhibition/ExhibitionView?uid=kmOQeVK6LmuibbBevzrD",
+  "fetched_at": "2026-10-01 21:59"
+ },
+ {
+  "store": "이마트에브리데이",
+  "title": "전단기획전 이번 달 쇼핑 종결!",
+  "period": "2026-10-01 ~ 2026-10-31",
+  "image": null,
+  "url": "https://emile.emarteveryday.co.kr/exhibition/ExhibitionView?uid=VBGi07azdnguAGGEFqaG",
+  "fetched_at": "2026-10-01 21:59"
+ }
+]

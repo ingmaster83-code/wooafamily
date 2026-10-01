@@ -22,3 +22,19 @@
 .ad-note{margin:6px 2px 10px}
 
 @media(max-width:900px){.d-img{flex:0 0 68px;width:68px;height:68px}.drow{gap:12px}}
+
+.stb.everyday{background:#ffb81c;color:#222}
+/* 이벤트 카드 */
+.evcs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 24px;margin-top:6px}
+.evc{display:flex;align-items:center;gap:12px;padding:10px 4px;border-bottom:1px solid var(--line)}.evc:hover{background:var(--soft)}
+.evc-img{flex:0 0 72px;width:72px;height:72px;object-fit:cover;border-radius:10px;background:var(--soft)}.evc-img.ph{display:block}
+.evc-m{display:flex;flex-direction:column;gap:2px;min-width:0}.evc-m b{font-size:.9rem;line-height:1.35}
+@media(max-width:900px){.evcs{grid-template-columns:minmax(0,1fr)}}
+
+.evc-img.ph{display:none}
+
+/* 분류 버튼(눌러서 그 종류만 보기) */
+.dcat{display:flex;flex-wrap:wrap;gap:6px;width:100%;order:3;padding:2px 0 4px}
+.dcat button{border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 14px;font:inherit;font-size:.85rem;font-weight:600;color:var(--sub);cursor:pointer}
+.dcat button:hover{border-color:var(--brand)}.dcat button.on{background:var(--brand);border-color:var(--brand);color:#fff}
+@media(max-width:900px){.dcat{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}.dcat::-webkit-scrollbar{display:none}.dcat button{flex:0 0 auto}}

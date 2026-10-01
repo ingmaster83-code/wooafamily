@@ -9,11 +9,11 @@ sys.stdout.reconfigure(encoding="utf-8")
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 sys.path.insert(0, os.path.join(HERE, ".."))
-import cu, emart24, homeplus, seven  # noqa: E402
+import cu, emart24, emarteveryday, events, homeplus, seven  # noqa: E402
 
 DATA = os.path.join(HERE, "..", "..", "data")
 OUT = os.path.join(DATA, "deals.json")
-STORES = {"CU": cu, "세븐일레븐": seven, "이마트24": emart24, "홈플러스": homeplus}
+STORES = {"CU": cu, "세븐일레븐": seven, "이마트24": emart24, "홈플러스": homeplus, "이마트에브리데이": emarteveryday}
 
 
 def main(only=None):
@@ -37,6 +37,17 @@ def main(only=None):
             report[name] = "실패 - 이전 데이터 유지"
             result += [d for d in prev if d["store"] == name]
     json.dump(result, open(OUT, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    if not only or "이벤트" in only:  # 진행 중 이벤트·기획전 (실패/0건이면 이전 데이터 유지)
+        try:
+            ev = events.collect()
+            if ev:
+                json.dump(ev, open(os.path.join(DATA, "events.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+                report["이벤트"] = f"{len(ev)}개"
+            else:
+                report["이벤트"] = "0건 - 이전 데이터 유지"
+        except Exception:  # noqa: BLE001
+            traceback.print_exc()
+            report["이벤트"] = "실패 - 이전 데이터 유지"
     # 월별 이력(상품 키 + 행사유형 + 가격만 보관)
     if result:
         ym = max(d["fetched_at"] for d in result)[:7]
