@@ -33,7 +33,7 @@ def short(d, link=None):
 
 def row_html(d, links, esc):
     st, g = STORE_SLUG[d["store"]], GROUP.get(d["promo"], d["promo"])
-    img = (f'<img class="d-img" loading="lazy" referrerpolicy="no-referrer" src="{esc(d["image"])}" alt="{esc(d["name"])}">' if d.get("image") and SHOW_IMAGES and d["store"] != "세븐일레븐" else '<span class="d-img ph"></span>')
+    img = (f'<img class="d-img" width="84" height="84" loading="lazy" referrerpolicy="no-referrer" src="{esc(d["image"])}" alt="{esc(d["name"])}">' if d.get("image") and SHOW_IMAGES and d["store"] != "세븐일레븐" else '<span class="d-img ph"></span>')
     lp, up = d["list_price"], d["unit_price"]
     if d["promo"] in ("1+1", "2+1", "3+1"):
         price = (f'<span class="d-list">정가 {won(lp)}</span><b class="d-unit">개당 {won(up)}</b>'
@@ -159,7 +159,7 @@ def build_deals(ctx):
         for s_, lst in by_ev.items():
             items = "".join(
                 f'<a class="evc" href="{esc(e["url"])}" rel="nofollow noopener" target="_blank">'
-                + (f'<img class="evc-img" loading="lazy" referrerpolicy="no-referrer" src="{esc(e["image"])}" alt="{esc(e["title"])}">' if e.get("image") else '<span class="evc-img ph"></span>')
+                + (f'<img class="evc-img" width="72" height="72" loading="lazy" referrerpolicy="no-referrer" src="{esc(e["image"])}" alt="{esc(e["title"])}">' if e.get("image") else '<span class="evc-img ph"></span>')
                 + f'<span class="evc-m"><b>{esc(e["title"])}</b><span class="muted sm">{esc(e["period"])}</span></span></a>' for e in lst)
             cards.append(f'<section class="card"><h2><span class="stb {STORE_SLUG[s_]}">{esc(s_)}</span> 진행 중 이벤트·기획전 {len(lst)}개</h2><div class="evcs">{items}</div></section>')
         bc, bld = crumbs([("/", "홈"), (SEC + "/", "편의점·마트 행사"), (None, "이벤트")])

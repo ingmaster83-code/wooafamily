@@ -339,7 +339,7 @@ def phone_carousel():
         return ""
     slides = "".join(
         f'<a class="pcar-s" href="{esc(p["url"])}" rel="nofollow sponsored noopener" target="_blank">'
-        f'{("<img class=pcar-img referrerpolicy=no-referrer src=" + chr(34) + esc(p["image"]) + chr(34) + " alt=" + chr(34) + esc(p["name"]) + chr(34) + ">") if p.get("image") else "<span class=pcar-img></span>"}'
+        f'{("<img class=pcar-img width=112 height=112 referrerpolicy=no-referrer src=" + chr(34) + esc(p["image"]) + chr(34) + " alt=" + chr(34) + esc(p["name"]) + chr(34) + ">") if p.get("image") else "<span class=pcar-img></span>"}'
         f'<span class="pcar-m"><span class="pcar-rank">인기 {p["rank"]}위</span><b>{esc(p["name"])}</b>'
         f'<span class="pcar-p">{p["price"]:,}원{" <i>로켓배송</i>" if p.get("rocket") else ""}</span>'
         f'<span class="pcar-go">온라인 가격비교 ↗</span></span></a>' for p in items)
@@ -360,7 +360,7 @@ def phone_rank_box():
     rows = "".join(
         f'<a class="pr" href="{esc(p["url"])}" rel="nofollow sponsored noopener" target="_blank">'
         f'<span class="pr-n n{p["rank"]}">{p["rank"]}</span>'
-        f'{("<img class=pr-img referrerpolicy=no-referrer src=" + chr(34) + esc(p["image"]) + chr(34) + " alt=" + chr(34) + esc(p["name"]) + chr(34) + ">") if p.get("image") else "<span class=pr-img></span>"}'
+        f'{("<img class=pr-img width=56 height=56 referrerpolicy=no-referrer src=" + chr(34) + esc(p["image"]) + chr(34) + " alt=" + chr(34) + esc(p["name"]) + chr(34) + ">") if p.get("image") else "<span class=pr-img></span>"}'
         f'<span class="pr-m"><b>{esc(p["name"])}</b><span class="pr-p">{p["price"]:,}원{" <i>로켓배송</i>" if p.get("rocket") else ""}</span></span>'
         f'<span class="pr-go">온라인 가격비교 ↗</span></a>' for p in items)
     return ('<section class="card phones"><h2>알뜰폰과 함께 쓰는 자급제폰 TOP 10</h2>'
@@ -430,7 +430,16 @@ def stat_boxes(items):
 pages = []
 
 
+ASSET_V = __import__("datetime").datetime.now().strftime("%Y%m%d%H%M")
+
+
+def versioned(html_text):
+    """/style.css -> /style.css?v=빌드시각 (배포할 때마다 정적 파일 캐시가 새로 갱신되도록)"""
+    return re.sub(r'((?:href|src)="/[A-Za-z0-9_-]+\.(?:css|js))"', lambda m: f'{m.group(1)}?v={ASSET_V}"', html_text)
+
+
 def write(path, content):
+    content = versioned(content)
     fp = os.path.join(OUT, path.strip("/"), "index.html") if path != "/" else os.path.join(OUT, "index.html")
     os.makedirs(os.path.dirname(fp), exist_ok=True)
     open(fp, "w", encoding="utf-8").write(content)
