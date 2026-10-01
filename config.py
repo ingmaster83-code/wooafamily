@@ -13,7 +13,7 @@ COUPANG_TRACKING = "AF5600192"
 COUPANG_ENABLED = True
 
 # 애드센스는 승인 후 활성화
-ADSENSE_CLIENT = ""             # 예: "ca-pub-6464921081676309"
+ADSENSE_CLIENT = "ca-pub-6464921081676309"   # 애드센스 퍼블리셔 ID (모든 페이지 head에 스크립트 삽입 + ads.txt 생성)
 MIN_COMBO = 3                   # 카테고리 조합 페이지 최소 결과 수(얇은 페이지 방지)
 
 # 네이버 서치어드바이저 사이트 소유 확인 (모든 페이지 head에 메타태그로 삽입)

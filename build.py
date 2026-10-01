@@ -696,7 +696,7 @@ def build():
             "<p>우아패밀리는 회원가입·로그인 기능이 없으며 이름, 연락처 등 개인정보를 직접 수집하지 않습니다.</p>"
             "<h2>자동 수집 정보</h2><p>서비스 개선을 위해 Google Analytics가 쿠키·접속 로그(방문 페이지, 기기·브라우저 정보 등 비식별 정보)를 수집할 수 있습니다. "
             "브라우저 설정에서 쿠키를 거부할 수 있습니다.</p>"
-            "<h2>제3자 광고·제휴</h2><p>쿠팡 파트너스 배너 등 외부 서비스가 자체 쿠키를 사용할 수 있으며, 해당 서비스의 개인정보 처리 정책이 적용됩니다.</p>"
+            "<h2>제3자 광고·제휴</h2><p>쿠팡 파트너스 배너 등 외부 서비스가 자체 쿠키를 사용할 수 있으며, 해당 서비스의 개인정보 처리 정책이 적용됩니다.</p><p>이 사이트는 Google 애드센스 등 제3자 광고 서비스를 이용할 수 있습니다. Google을 포함한 제3자 광고 사업자는 쿠키를 사용하여 이용자가 이 사이트나 다른 사이트를 방문한 기록을 바탕으로 광고를 게재할 수 있습니다. 이용자는 <a href=\"https://adssettings.google.com\" rel=\"noopener\" target=\"_blank\">Google 광고 설정</a>에서 맞춤 광고를 해제할 수 있습니다.</p>"
             "</section></main>")
     write("/privacy/", head(f"개인정보처리방침 | {C.SITE_NAME}", "우아패밀리 개인정보처리방침", "/privacy/") + header() + priv + footer(stamp))
 
@@ -709,6 +709,9 @@ def build():
     urls = "".join(f"<url><loc>{C.DOMAIN}{u}</loc><lastmod>{ymd}</lastmod></url>" for u in pages)
     open(os.path.join(OUT, "sitemap.xml"), "w", encoding="utf-8").write(
         f'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{urls}</urlset>')
+    if C.ADSENSE_CLIENT:  # 애드센스 ads.txt (표준 형식)
+        pub = C.ADSENSE_CLIENT.replace("ca-pub-", "pub-")
+        open(os.path.join(OUT, "ads.txt"), "w", encoding="utf-8").write(f"google.com, {pub}, DIRECT, f08c47fec0942fa0\n")
     open(os.path.join(OUT, "robots.txt"), "w", encoding="utf-8").write(f"User-agent: *\nAllow: /\nSitemap: {C.DOMAIN}/sitemap.xml\n")
     open(os.path.join(OUT, "404.html"), "w", encoding="utf-8").write(
         head("페이지를 찾을 수 없어요 | " + C.SITE_NAME, "페이지를 찾을 수 없습니다", "/404.html", noindex=True) + header()
