@@ -214,6 +214,7 @@ def coupang_generic():
 
 
 def footer(stamp, finder_js=False):
+    kakao_key_script = (f'<script>window.WOOA_KAKAO_KEY="{C.KAKAO_JS_KEY}";</script>' if getattr(C, "KAKAO_JS_KEY", "") else "")
     contact = f'<p>정정 요청: {esc(C.CONTACT_EMAIL)}</p>' if C.CONTACT_EMAIL else ""
     live = "".join(f'<a href="{s["url"]}">{s["name"]} · {esc(s["title"])}</a>' for s in SERVICES if s["live"])
     soon = "".join(f'<span>{s["name"]} <em>준비 중</em></span>' for s in SERVICES if not s["live"])
@@ -224,7 +225,7 @@ def footer(stamp, finder_js=False):
             f'<div><h4>안내</h4><a href="/about/">서비스 소개·수집 정책</a><a href="/privacy/">개인정보처리방침</a></div></div>'
             f'<div class="gf-note"><p>요금 정보는 각 통신사 공식 홈페이지를 기준으로 하루 여러 번 확인해 갱신합니다(최근 확인: {stamp}). '
             f'실제 가입 조건과 요금은 반드시 통신사 화면에서 다시 확인하세요. 우아패밀리는 통신사의 대리·중개 사이트가 아닙니다.</p>{contact}'
-            f'<p>© 2026 {C.SITE_NAME}</p></div></div></footer><script src="/share.js"></script>{'<script src="/finder.js"></script>' if finder_js else ''}</body></html>')
+            f'<p>© 2026 {C.SITE_NAME}</p></div></div></footer>{kakao_key_script}<script src="/share.js"></script>{'<script src="/finder.js"></script>' if finder_js else ''}</body></html>')
 
 
 def qos_kbps(p):
@@ -325,6 +326,7 @@ def plan_cards(plans):
 
 CARDS = []
 PHONES = {}
+GOLD = {}
 
 
 def calc_banner():
@@ -351,6 +353,25 @@ def phone_carousel():
             f'<div class="pcar-dots">{dots}</div></div>'
             f'<p class="fine">쿠팡 검색 랭킹 기준(판매량 순위가 아님) · {esc(PHONES.get("fetched_at", "")[:10])} 확인 · '
             '‘온라인 가격비교’ 링크는 쿠팡 파트너스 활동의 일환으로 일정액의 수수료를 제공받을 수 있습니다.</p>')
+
+
+def goldbox_box():
+    items = (GOLD.get("items") or [])[:12]
+    if not items:
+        return ""
+    cards = "".join(
+        f'<a class="gd" href="{esc(g["url"])}" rel="nofollow sponsored noopener" target="_blank">'
+        + (f'<img class="gd-img" width="96" height="96" referrerpolicy="no-referrer" src="{esc(g["image"])}" alt="{esc(g["name"])}">' if g.get("image") else '<span class="gd-img"></span>')
+        + f'<span class="gd-n">{esc(g["name"])}</span><span class="gd-p">{g["price"]:,}원{" <i>로켓배송</i>" if g.get("rocket") else ""}</span></a>' for g in items)
+    return ('<section class="card gold"><h2>오늘의 쿠팡 골드박스 특가</h2>'
+            f'<p class="muted sm">쿠팡이 오늘 내놓은 특가 상품입니다. {esc(GOLD.get("fetched_at", "")[:16])} 확인 · 가격은 수시로 바뀔 수 있어요.</p>'
+            f'<div class="golds">{cards}</div>'
+            '<p class="fine">이 페이지는 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p></section>')
+
+
+def coupang_deal():
+    """행사 페이지 하단: 골드박스를 직접 보여주고, 데이터가 없으면 기존 위젯으로 대체"""
+    return goldbox_box() or coupang_generic()
 
 
 def phone_rank_box():
@@ -489,6 +510,10 @@ def build():
     stamp = max(p["fetched_at"] for p in plans)
     ymd = stamp[:10]
     ym = f"{int(ymd[:4])}년 {int(ymd[5:7])}월"
+    gp = os.path.join(HERE, "data", "goldbox.json")
+    GOLD.clear()
+    if os.path.exists(gp):
+        GOLD.update(json.load(open(gp, encoding="utf-8")))
     pp = os.path.join(HERE, "data", "phones.json")
     PHONES.clear()
     if os.path.exists(pp):
@@ -849,7 +874,7 @@ def build():
     # --- 편의점·마트 행사 섹션
     import build_deal
     build_deal.build_deals({"esc": esc, "C": C, "write": write, "head": head, "header": header, "footer": footer,
-                            "crumbs": crumbs, "coupang": coupang_generic, "HERE": HERE, "OUT": OUT, "stamp": stamp, "ymd": ymd})
+                            "crumbs": crumbs, "coupang": coupang_deal, "HERE": HERE, "OUT": OUT, "stamp": stamp, "ymd": ymd})
 
     # --- sitemap / robots / 404
     urls = "".join(f"<url><loc>{C.DOMAIN}{u}</loc><lastmod>{ymd}</lastmod></url>" for u in pages)

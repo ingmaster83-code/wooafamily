@@ -18,3 +18,6 @@ MIN_COMBO = 3                   # 카테고리 조합 페이지 최소 결과 �
 
 # 네이버 서치어드바이저 사이트 소유 확인 (모든 페이지 head에 메타태그로 삽입)
 NAVER_SITE_VERIFICATION = "dc74dcbb4b60d9d60833f375eab9cf3242b187f8"
+
+# 카카오톡 공유(카카오 디벨로퍼스 > 앱 > JavaScript 키, 웹 도메인에 https://wooafamily.com 등록). 비어 있으면 모바일 기기 공유창/링크 복사로 대체
+KAKAO_JS_KEY = ""
