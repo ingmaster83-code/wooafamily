@@ -68,6 +68,14 @@ jobs:
         run: python collect/deal/coupang_goldbox.py
         continue-on-error: true
 
+      - name: 쿠팡 카테고리별 인기 상품 (키가 없으면 건너뜀)
+        if: github.event_name != 'push'
+        env:
+          COUPANG_ACCESS_KEY: ${{ secrets.COUPANG_ACCESS_KEY }}
+          COUPANG_SECRET_KEY: ${{ secrets.COUPANG_SECRET_KEY }}
+        run: python collect/deal/coupang_today.py
+        continue-on-error: true
+
       - name: 사이트 빌드
         run: python build.py
 

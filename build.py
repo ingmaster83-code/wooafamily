@@ -51,8 +51,8 @@ SERVICES = [
      "desc": "통신사 공식 정보 기준으로 요금제를 한눈에 비교"},
     {"key": "deal", "icon": "🏪", "name": "장보기", "title": "편의점·마트 행사 모음", "url": "/deal/", "live": True,
      "desc": "1+1·2+1을 정가와 개당 가격으로 비교"},
-    {"key": "move", "icon": "⛽", "name": "교통비", "title": "주유소 최저가·정기권 비교", "url": "#", "live": False,
-     "desc": "기름값과 대중교통비를 줄이는 방법"},
+    {"key": "today", "icon": "🔥", "name": "특가", "title": "오늘의 생활 특가", "url": "/today/", "live": True,
+     "desc": "쿠팡 골드박스와 카테고리별 인기 상품을 매일 갱신"},
     {"key": "energy", "icon": "💡", "name": "공과금", "title": "전기·가스 요금 계산", "url": "#", "live": False,
      "desc": "고정비를 줄이는 계산기와 감면 안내"},
 ]
@@ -185,6 +185,7 @@ def header(active=""):
             f'<a href="{SEC}/" class="{"on" if active == "phone" else ""}">알뜰폰 요금제</a>'
             f'<a href="{SEC}/calculator/" class="{"on" if active == "calc" else ""}">절약 계산기</a>'
             f'<a href="/deal/" class="{"on" if active == "deal" else ""}">편의점·마트 행사</a>'
+            f'<a href="/today/" class="{"on" if active == "today" else ""}">오늘의 특가</a>'
             f'<a href="/about/">소개</a></nav></div></header>')
 
 
@@ -875,6 +876,11 @@ def build():
     import build_deal
     build_deal.build_deals({"esc": esc, "C": C, "write": write, "head": head, "header": header, "footer": footer,
                             "crumbs": crumbs, "coupang": coupang_deal, "HERE": HERE, "OUT": OUT, "stamp": stamp, "ymd": ymd})
+
+    # --- 오늘의 생활 특가 섹션
+    import build_today
+    build_today.build_today({"esc": esc, "C": C, "write": write, "head": head, "header": header, "footer": footer, "crumbs": crumbs,
+                             "HERE": HERE, "stamp": stamp, "ymd": ymd, "gold": GOLD})
 
     # --- sitemap / robots / 404
     urls = "".join(f"<url><loc>{C.DOMAIN}{u}</loc><lastmod>{ymd}</lastmod></url>" for u in pages)
