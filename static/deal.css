@@ -1,0 +1,22 @@
+/* 편의점·마트 행사 목록 */
+.dctl{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:12px 0 4px}
+.dctl input{flex:1 1 240px;min-width:0;padding:10px 14px;border:1px solid var(--line);border-radius:12px;font:inherit;font-size:.92rem;background:#fff}
+.dctl input:focus{outline:none;border-color:var(--brand)}
+.dctl .seg{flex:0 1 auto}.dsort{display:flex;gap:6px;align-items:center;flex-wrap:wrap;width:100%;padding:4px 0 10px;border-bottom:1px solid var(--line)}
+.dsort .asof{margin-left:auto}.dsort .asof b{font-size:1rem;color:var(--fg)}
+.dlist{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:28px}.card.tight .chips{margin:0}
+.drow{display:flex;align-items:center;gap:12px;padding:12px 4px;border-bottom:1px solid var(--line)}
+.d-img{flex:0 0 56px;width:56px;height:56px;object-fit:contain;border-radius:10px;background:var(--soft)}.d-img.ph{display:block}
+.d-main{flex:1;min-width:0}.d-top{display:flex;gap:6px;align-items:center;margin-bottom:2px}
+.d-name{display:block;font-size:.93rem;line-height:1.35;word-break:keep-all}
+.stb{display:inline-block;padding:1px 7px;border-radius:6px;font-size:.68rem;font-weight:800;color:#fff;line-height:1.5}
+.stb.cu{background:#652c8f}.stb.seven{background:#e8412c}.stb.emart24{background:#f5a300;color:#222}.stb.homeplus{background:#d71920}
+.d-price{flex:0 0 auto;display:flex;flex-direction:column;align-items:flex-end;gap:1px;min-width:92px;max-width:42%;text-align:right;white-space:nowrap}
+.d-list{font-size:.76rem;color:var(--mute)}.d-unit{font-size:1.1rem;letter-spacing:-.03em}
+.d-rate{font-size:.74rem;font-weight:800;color:#dc2626}.d-note{font-size:.72rem;color:var(--mute)}
+.d-buy{margin-top:6px;padding:7px 14px;border-radius:9px;background:var(--brand);color:#fff!important;font-size:.8rem;font-weight:800;letter-spacing:-.01em;box-shadow:0 2px 6px rgba(16,185,129,.28);transition:.12s}.d-buy:hover{background:var(--brand-d);text-decoration:none;transform:translateY(-1px)}
+@media(max-width:900px){.dlist{grid-template-columns:minmax(0,1fr)}.dctl .seg{width:100%}.dctl .seg button{padding:7px 4px;font-size:.78rem}}
+
+.drow{min-width:0}.d-name{overflow-wrap:anywhere}
+
+.ad-note{margin:6px 2px 10px}

@@ -1,0 +1,109 @@
+[
+ {
+  "carrier": "에이모바일",
+  "issuer": "삼성카드",
+  "name": "U+알뜰폰 파트너스 삼성카드",
+  "annual_fee": [
+   "국내전용: 20,000원 / 해외겸용(MASTER,AMEX): 20,000원"
+  ],
+  "benefit": "통신요금 자동이체 시 요금할인 / 전월 30만원 이상 시 최대 20,000원 / 전월 70만원 이상 시 최대 21,000원 / 전월 120만원 이상 시 최대 22,000원",
+  "tiers": [
+   {
+    "spend_won": 300000,
+    "discount": 20000
+   },
+   {
+    "spend_won": 700000,
+    "discount": 21000
+   },
+   {
+    "spend_won": 1200000,
+    "discount": 22000
+   }
+  ],
+  "max_discount": 22000,
+  "networks": [
+   "LGU+"
+  ],
+  "months": null,
+  "source_url": "https://amobile.co.kr/card/7",
+  "fetched_at": "2026-10-01 18:49",
+  "id": "amobile-1"
+ },
+ {
+  "carrier": "에이모바일",
+  "issuer": "KB국민카드",
+  "name": "알뜰폰 Hub II 카드",
+  "annual_fee": [
+   "국내전용 : 15,000원 / 해외겸용 : 15,000원"
+  ],
+  "benefit": "KT·LGU+망 통신요금 자동이체 시 요금할인 / * SKT망 요금제 할인 미적용 / 30만원 이상 1만 2천원 / 70만원 이상 1만 7천원",
+  "tiers": [
+   {
+    "spend_won": 300000,
+    "discount": 12000
+   },
+   {
+    "spend_won": 700000,
+    "discount": 17000
+   }
+  ],
+  "max_discount": 17000,
+  "networks": [
+   "KT",
+   "LGU+"
+  ],
+  "months": null,
+  "source_url": "https://amobile.co.kr/card/5",
+  "fetched_at": "2026-10-01 18:49",
+  "id": "amobile-2"
+ },
+ {
+  "carrier": "에이모바일",
+  "issuer": "비씨카드",
+  "name": "KT 마이알뜰폰 BC 바로카드",
+  "annual_fee": [
+   "국내전용/해외겸용 마스터 : 20,000원 / 해외겸용 비자 : 23,000원"
+  ],
+  "benefit": "통신요금 자동이체 시 요금할인 / 조건별 프로모션 제공",
+  "tiers": [],
+  "max_discount": null,
+  "networks": [
+   "KT"
+  ],
+  "months": null,
+  "source_url": "https://amobile.co.kr/card/13",
+  "fetched_at": "2026-10-01 18:49",
+  "id": "amobile-3"
+ },
+ {
+  "carrier": "아이즈모바일",
+  "issuer": "KT",
+  "name": "KT 마이알뜰폰 BC바로카드",
+  "annual_fee": [],
+  "benefit": "24개월간 매월 최대 17,000원 할인",
+  "tiers": [],
+  "max_discount": 17000,
+  "networks": [
+   "KT"
+  ],
+  "months": 24,
+  "source_url": "https://eyes.co.kr/payplan/alliance_view/21",
+  "fetched_at": "2026-10-01 18:49",
+  "id": "eyes-4"
+ },
+ {
+  "carrier": "아이즈모바일",
+  "issuer": "국민",
+  "name": "국민 KMVNO 알뜰폰 카드",
+  "annual_fee": [],
+  "benefit": "전월 실적에 따라 최대 17,000원 할인!",
+  "tiers": [],
+  "max_discount": 17000,
+  "networks": null,
+  "months": null,
+  "source_url": "https://eyes.co.kr/payplan/alliance_view/3",
+  "fetched_at": "2026-10-01 18:49",
+  "id": "eyes-5"
+ }
+]
