@@ -27,7 +27,7 @@
   ],
   "months": null,
   "source_url": "https://amobile.co.kr/card/7",
-  "fetched_at": "2026-10-02 23:10",
+  "fetched_at": "2026-10-03 08:23",
   "id": "amobile-1"
  },
  {
@@ -55,7 +55,7 @@
   ],
   "months": null,
   "source_url": "https://amobile.co.kr/card/5",
-  "fetched_at": "2026-10-02 23:10",
+  "fetched_at": "2026-10-03 08:23",
   "id": "amobile-2"
  },
  {
@@ -73,7 +73,7 @@
   ],
   "months": null,
   "source_url": "https://amobile.co.kr/card/13",
-  "fetched_at": "2026-10-02 23:10",
+  "fetched_at": "2026-10-03 08:23",
   "id": "amobile-3"
  },
  {
@@ -89,7 +89,7 @@
   ],
   "months": 24,
   "source_url": "https://eyes.co.kr/payplan/alliance_view/21",
-  "fetched_at": "2026-10-02 23:10",
+  "fetched_at": "2026-10-03 08:23",
   "id": "eyes-4"
  },
  {
@@ -103,7 +103,7 @@
   "networks": null,
   "months": null,
   "source_url": "https://eyes.co.kr/payplan/alliance_view/3",
-  "fetched_at": "2026-10-02 23:10",
+  "fetched_at": "2026-10-03 08:23",
   "id": "eyes-5"
  }
 ]
