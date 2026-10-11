@@ -21,7 +21,8 @@ esc = html.escape
 SEC = "/phone"  # 알뜰폰 섹션 접두사
 
 CARRIER_SLUG = {"아이즈모바일": "eyes", "프리티모바일": "freet", "에이모바일": "amobile",
-                "조이텔": "joytel", "시월모바일": "siwol", "SK7모바일": "sk7"}
+                "조이텔": "joytel", "시월모바일": "siwol", "SK7모바일": "sk7",
+                "인스모바일": "insmobile", "스마텔": "smartel", "이야기모바일": "eyagi", "티플러스": "tplus", "KT엠모바일": "ktm"}
 NET_SLUG = {"SKT": "skt", "KT": "kt", "LGU+": "lgu"}
 LABELS = {
     "network": {"SKT": "SKT망", "KT": "KT망", "LGU+": "LG U+망"},
@@ -505,6 +506,8 @@ def plan_desc(p, det, ym):
 def build():
     plans = json.load(open(os.path.join(HERE, "data", "plans.json"), encoding="utf-8"))
     plans = [p for p in plans if p["network"] and p["price_now"] is not None]
+    _seen = set()
+    plans = [p for p in plans if not ((p["carrier"], p["plan_id"]) in _seen or _seen.add((p["carrier"], p["plan_id"])))]  # 같은 요금제 중복 제거
     for p in plans:
         p["_cat"] = assign(p)
         p["_cat"]["carrier"] = p["carrier"]
