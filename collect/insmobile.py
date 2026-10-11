@@ -6,7 +6,7 @@ import joytel
 from common import DELAY, http, won
 
 BASE = "https://www.insmobile.co.kr"
-SITES = [("인스모바일", "https://www.insmobile.co.kr"), ("슈가모바일", "https://www.sugarmobile.co.kr"), ("도시락모바일", "https://dosirakmobile.com")]
+SITES = [("인스모바일", "https://www.insmobile.co.kr"), ("한패스모바일", "https://www.hanpassmobile.co.kr"), ("슈가모바일", "https://www.sugarmobile.co.kr"), ("도시락모바일", "https://dosirakmobile.com")]
 PLAIN = {"도시락모바일"}  # 목록 카드 구조가 다르고 프로모션 없이 정가만 표기
 NETS = {"SKT": "SKT", "KT": "KT", "LGU+": "LGU+", "LGT": "LGU+", "LG U+": "LGU+"}
 
@@ -34,7 +34,8 @@ def collect_site(carrier, BASE):
             p["price_now"], p["discount_months"], p["price_after"], p["discount_type"] = won(m.group(1)), int(m.group(2)), won(m.group(3)), "period"
         elif now_m:
             p["price_now"] = won(now_m.group(1))
-            p["price_after"], p["discount_type"], p["discount_months"] = p["price_now"], "none", None
+            life = p["discount_type"] == "lifetime"  # 목록 배지·문구로 이미 평생할인 판정된 경우 유지
+            p["price_after"], p["discount_type"], p["discount_months"] = p["price_now"], ("lifetime" if life else "none"), None
         if base:
             p["list_price"] = won(base.group(1))
         tm = re.search(r"핫스팟 제공량은 ([\d.]+\s*(?:GB|MB))", d)

@@ -23,7 +23,9 @@ SEC = "/phone"  # 알뜰폰 섹션 접두사
 CARRIER_SLUG = {"아이즈모바일": "eyes", "프리티모바일": "freet", "에이모바일": "amobile",
                 "조이텔": "joytel", "시월모바일": "siwol", "SK7모바일": "sk7",
                 "인스모바일": "insmobile", "스마텔": "smartel", "이야기모바일": "eyagi", "티플러스": "tplus", "KT엠모바일": "ktm",
-                "슈가모바일": "sugar", "도시락모바일": "dosirak", "KG모바일": "kg"}
+                "슈가모바일": "sugar", "도시락모바일": "dosirak", "KG모바일": "kg", "한패스모바일": "hanpass",
+                "모나": "mona", "U+유모바일": "uplusyou", "찬스모바일": "chance", "아시아모바일": "asia", "토스모바일": "toss", "LG헬로모바일": "hello",
+                "이지모바일": "eg", "웰(WELL)": "well", "모빙": "mobing", "안심모바일": "s1", "GME모바일": "gme", "마블링": "marbling"}
 NET_SLUG = {"SKT": "skt", "KT": "kt", "LGU+": "lgu"}
 LABELS = {
     "network": {"SKT": "SKT망", "KT": "KT망", "LGU+": "LG U+망"},
@@ -625,7 +627,7 @@ def build():
               "period": f"아니요. {price_story(p)}처럼 할인 기간이 끝나면 요금이 달라집니다.",
               "none": "별도 기간 할인 없이 표시된 요금이 계속 적용되는 정가형 요금제로 안내되어 있습니다."}[p["discount_type"]]),
             ("이 요금은 어디서 확인한 건가요?",
-             f"{p['carrier']} 공식 홈페이지의 요금제 안내를 {p['fetched_at']}에 확인한 내용입니다. 원문 링크에서 직접 비교해 보세요."),
+             (f"{p['carrier']} 요금제 안내를 {p['fetched_at']}에 확인한 내용입니다(출처: LG U+ 알뜰폰 허브 알닷의 공개 요금제 정보). 원문 링크에서 직접 비교해 보세요." if "알닷" in (p.get("price_note") or "") else f"{p['carrier']} 공식 홈페이지의 요금제 안내를 {p['fetched_at']}에 확인한 내용입니다. 원문 링크에서 직접 비교해 보세요.")),
             ("가입하면 요금이 바로 적용되나요?",
              "가입 시점·번호이동 여부·제휴 혜택에 따라 실제 청구액은 달라질 수 있어요. 최종 조건은 가입 화면에서 확인하세요."),
         ]
@@ -795,7 +797,7 @@ def build():
           f'<p class="more"><a href="{SEC}/discount/lifetime/">평생 할인 요금제 {n_life}개 전체 보기 →</a></p></section>'
           f'<section class="col-r"><h2 class="sh">조건으로 찾기</h2><div class="card tight">{"".join(hq)}</div>'
           f'{phone_carousel()}<h2 class="sh">통신사별 요금제</h2><div class="card tight cls">{car_list}</div></section></div>'
-          f'<section class="trust c"><div><b>공식 정보만</b><p>통신사 공식 홈페이지 정보만 수집하고 원문 링크·확인 시각을 표시해요.</p></div>'
+          f'<section class="trust c"><div><b>공식 정보만</b><p>통신사 공식 홈페이지와 LG U+ 알뜰폰 허브(알닷)에 공개된 정보만 수집하고 원문 링크·확인 시각을 표시해요.</p></div>'
           f'<div><b>순서는 요금 기준</b><p>광고·제휴와 무관하게 장기 월 요금 낮은 순으로 정렬해요.</p></div>'
           f'<div><b>하루 여러 번 갱신</b><p>자동으로 다시 확인해 바뀐 요금을 빠르게 반영해요.</p></div></section></main>' + footer(stamp).replace("</body>", '<script src="/pcar.js"></script></body>'))
 
@@ -804,7 +806,7 @@ def build():
              f"<p>{C.SITE_NAME}은 {C.TAGLINE}는 목표로 생활비를 줄여주는 정보를 모으는 사이트입니다. 현재는 알뜰폰 요금제를 "
              "통신사·통신망·데이터량·요금대·할인 유형별로 비교할 수 있게 정리하고 있으며, 앞으로 다른 절약 주제를 차례로 추가할 예정입니다. "
              "특정 통신사의 대리점이나 중개 서비스가 아니며, 가입은 각 통신사 공식 화면에서 이루어집니다.</p>"
-             "<h2>데이터 수집 방식</h2><ul><li>각 알뜰폰 통신사의 공식 홈페이지에 공개된 요금제 정보만 수집합니다.</li>"
+             "<h2>데이터 수집 방식</h2><ul><li>각 알뜰폰 통신사의 공식 홈페이지에 공개된 요금제 정보를 수집하고, 일부 사업자는 LG U+ 알뜰폰 허브(알닷)에 공개된 요금제 정보를 사용합니다. 모든 요금제에는 원문 링크를 표시합니다.</li>"
              "<li>robots.txt를 준수하고, 로그인이 필요한 화면이나 개인정보는 수집하지 않습니다.</li>"
              "<li>다른 비교 사이트의 값을 가져오지 않으며, 항목마다 원문 링크와 확인 시각을 함께 표시합니다.</li>"
              "<li>하루 여러 번 자동으로 다시 확인하고, 가격이 비정상적으로 바뀐 항목은 검증 전까지 게시를 보류합니다.</li></ul>"

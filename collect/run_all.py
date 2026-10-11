@@ -7,12 +7,12 @@ import traceback
 
 sys.stdout.reconfigure(encoding="utf-8")
 sys.path.insert(0, os.path.dirname(__file__))
-import amobile, cards, eyagi, eyes, freet, insmobile, joytel, kg, ktm, sk7, smartel, tplus  # noqa: E402
+import alac, amobile, cards, eyagi, eyes, freet, insmobile, joytel, kg, ktm, sk7, smartel, tplus  # noqa: E402
 
 DATA = os.path.join(os.path.dirname(__file__), "..", "data")
 OUT = os.path.join(DATA, "plans.json")
 COLLECTORS = {"에이모바일": amobile, "프리티모바일": freet, "아이즈모바일": eyes, "SK7모바일": sk7, "조이텔·시월": joytel,
-              "인스모바일": insmobile, "스마텔": smartel, "이야기모바일": eyagi, "티플러스": tplus, "KT엠모바일": ktm, "KG모바일": kg}
+              "인스모바일": insmobile, "스마텔": smartel, "이야기모바일": eyagi, "티플러스": tplus, "KT엠모바일": ktm, "KG모바일": kg, "알닷": alac}
 
 
 def main(only=None):
@@ -20,7 +20,8 @@ def main(only=None):
     prev = json.load(open(OUT, encoding="utf-8")) if os.path.exists(OUT) else []
     result, report = [], {}
     for key, mod in COLLECTORS.items():
-        names = {"조이텔·시월": ("조이텔", "시월모바일"), "인스모바일": ("인스모바일", "슈가모바일", "도시락모바일")}.get(key, (key,))
+        names = {"조이텔·시월": ("조이텔", "시월모바일"), "인스모바일": ("인스모바일", "슈가모바일", "도시락모바일", "한패스모바일"),
+                 "알닷": ("모나", "U+유모바일", "찬스모바일", "아시아모바일", "토스모바일", "LG헬로모바일", "이지모바일", "웰(WELL)", "모빙", "안심모바일", "GME모바일", "마블링")}.get(key, (key,))
         if only and key not in only:
             result += [p for p in prev if p["carrier"] in names]  # 건너뛴 통신사는 이전 데이터 유지
             continue
