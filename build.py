@@ -22,7 +22,8 @@ SEC = "/phone"  # 알뜰폰 섹션 접두사
 
 CARRIER_SLUG = {"아이즈모바일": "eyes", "프리티모바일": "freet", "에이모바일": "amobile",
                 "조이텔": "joytel", "시월모바일": "siwol", "SK7모바일": "sk7",
-                "인스모바일": "insmobile", "스마텔": "smartel", "이야기모바일": "eyagi", "티플러스": "tplus", "KT엠모바일": "ktm"}
+                "인스모바일": "insmobile", "스마텔": "smartel", "이야기모바일": "eyagi", "티플러스": "tplus", "KT엠모바일": "ktm",
+                "슈가모바일": "sugar", "도시락모바일": "dosirak", "KG모바일": "kg"}
 NET_SLUG = {"SKT": "skt", "KT": "kt", "LGU+": "lgu"}
 LABELS = {
     "network": {"SKT": "SKT망", "KT": "KT망", "LGU+": "LG U+망"},

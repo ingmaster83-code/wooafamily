@@ -48,7 +48,7 @@ def num(s):
 
 def is_5g_name(name):
     """요금제명에서 5G(세대) 판정. '5GB'·'15G' 같은 데이터량 표기는 제외."""
-    return bool(re.search(r"(?<![0-9A-Za-z])5G(?![A-Za-z0-9])", name or ""))
+    return bool(re.search(r"(?<![0-9A-Za-z.])5G(?![A-Za-z0-9])", name or ""))
 
 
 def parse_overage(text):
