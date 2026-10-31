@@ -1,11 +1,83 @@
 [
  {
   "store": "이마트24",
+  "title": "11월 하겐다즈 이벤트",
+  "period": "2026-11-01 ~ 2026-11-07",
+  "image": "https://emart24.co.kr/image/MjgwMzQ1",
+  "url": "https://emart24.co.kr/event/8541",
+  "fetched_at": "2026-11-01 08:08"
+ },
+ {
+  "store": "이마트24",
   "title": "김창수 위스키 셀레스티얼2 단독판매 이벤트",
   "period": "2026-10-30 ~ 2026-11-02",
   "image": "https://emart24.co.kr/image/MjgwMzE1",
   "url": "https://emart24.co.kr/event/8523",
-  "fetched_at": "2026-10-31 23:15"
+  "fetched_at": "2026-11-01 08:08"
+ },
+ {
+  "store": "이마트24",
+  "title": "11월 쓱데이 모아보기!",
+  "period": "2026-11-01 ~ 2026-11-10",
+  "image": "https://emart24.co.kr/image/MjgwMzA4",
+  "url": "https://emart24.co.kr/event/8522",
+  "fetched_at": "2026-11-01 08:08"
+ },
+ {
+  "store": "이마트24",
+  "title": "11월 돈아낄팁 이벤트",
+  "period": "2026-11-01 ~ 2026-11-30",
+  "image": "https://emart24.co.kr/image/MjgwMjc4",
+  "url": "https://emart24.co.kr/event/8506",
+  "fetched_at": "2026-11-01 08:08"
+ },
+ {
+  "store": "이마트24",
+  "title": "11월 월간 신상 하이라이트 이벤트",
+  "period": "2026-11-01 ~ 2026-11-30",
+  "image": "https://emart24.co.kr/image/MjgwMjYx",
+  "url": "https://emart24.co.kr/event/8504",
+  "fetched_at": "2026-11-01 08:08"
+ },
+ {
+  "store": "이마트24",
+  "title": "11월 옐로우 이벤트",
+  "period": "2026-11-01 ~ 2026-11-30",
+  "image": "https://emart24.co.kr/image/MjgwMjUz",
+  "url": "https://emart24.co.kr/event/8502",
+  "fetched_at": "2026-11-01 08:08"
+ },
+ {
+  "store": "이마트24",
+  "title": "11월 빼빼로데이 이벤트",
+  "period": "2026-11-01 ~ 2026-11-10",
+  "image": "https://emart24.co.kr/image/MjgwMjQ5",
+  "url": "https://emart24.co.kr/event/8501",
+  "fetched_at": "2026-11-01 08:08"
+ },
+ {
+  "store": "이마트24",
+  "title": "11월 컵커피 스탬프 이벤트",
+  "period": "2026-11-01 ~ 2026-11-30",
+  "image": "https://emart24.co.kr/image/MjgwMjQ0",
+  "url": "https://emart24.co.kr/event/8485",
+  "fetched_at": "2026-11-01 08:08"
+ },
+ {
+  "store": "이마트24",
+  "title": "11월 ALLDAY 내 몸을 위한 특별한 혜택",
+  "period": "2026-11-01 ~ 2026-11-30",
+  "image": "https://emart24.co.kr/image/MjgwMjM2",
+  "url": "https://emart24.co.kr/event/8483",
+  "fetched_at": "2026-11-01 08:08"
+ },
+ {
+  "store": "이마트24",
+  "title": "11월 올데이 하이라이브 이벤트",
+  "period": "2026-11-01 ~ 2026-11-30",
+  "image": "https://emart24.co.kr/image/MjgwMjI5",
+  "url": "https://emart24.co.kr/event/8482",
+  "fetched_at": "2026-11-01 08:08"
  },
  {
   "store": "이마트24",
@@ -13,7 +85,15 @@
   "period": "2026-10-27 ~ 2026-11-03",
   "image": "https://emart24.co.kr/image/MjgwMjc1",
   "url": "https://emart24.co.kr/event/8481",
-  "fetched_at": "2026-10-31 23:15"
+  "fetched_at": "2026-11-01 08:08"
+ },
+ {
+  "store": "이마트24",
+  "title": "11월 K-세일페스타 이벤트",
+  "period": "2026-11-01 ~ 2026-11-30",
+  "image": "https://emart24.co.kr/image/MjgwMTcy",
+  "url": "https://emart24.co.kr/event/8461",
+  "fetched_at": "2026-11-01 08:08"
  },
  {
   "store": "이마트24",
@@ -21,7 +101,23 @@
   "period": "2026-10-30 ~ 2026-11-08",
   "image": "https://emart24.co.kr/image/MjgwMTMw",
   "url": "https://emart24.co.kr/event/8441",
-  "fetched_at": "2026-10-31 23:15"
+  "fetched_at": "2026-11-01 08:08"
+ },
+ {
+  "store": "이마트24",
+  "title": "11월 쓱데이 쿠폰 이벤트",
+  "period": "2026-11-01 ~ 2026-11-30",
+  "image": "https://emart24.co.kr/image/MjgwMTEz",
+  "url": "https://emart24.co.kr/event/8440",
+  "fetched_at": "2026-11-01 08:08"
+ },
+ {
+  "store": "이마트24",
+  "title": "11월 앱 통합바코드 프로모션",
+  "period": "2026-11-01 ~ 2026-11-30",
+  "image": "https://emart24.co.kr/image/MjgwMTY3",
+  "url": "https://emart24.co.kr/event/8439",
+  "fetched_at": "2026-11-01 08:08"
  },
  {
   "store": "이마트24",
@@ -29,7 +125,7 @@
   "period": "2026-10-26 ~ 2026-11-08",
   "image": "https://emart24.co.kr/image/MjgwMDU5",
   "url": "https://emart24.co.kr/event/8421",
-  "fetched_at": "2026-10-31 23:15"
+  "fetched_at": "2026-11-01 08:08"
  },
  {
   "store": "이마트24",
@@ -37,15 +133,31 @@
   "period": "2026-10-01 ~ 2026-11-30",
   "image": "https://emart24.co.kr/image/MjgwMDQ2",
   "url": "https://emart24.co.kr/event/8420",
-  "fetched_at": "2026-10-31 23:15"
+  "fetched_at": "2026-11-01 08:08"
  },
  {
   "store": "이마트24",
-  "title": "10월 킵해주세요 이벤트",
-  "period": "2026-10-21 ~ 2026-10-31",
-  "image": "https://emart24.co.kr/image/MjgwMDQy",
-  "url": "https://emart24.co.kr/event/8419",
-  "fetched_at": "2026-10-31 23:15"
+  "title": "11월 소문내기 이벤트",
+  "period": "2026-11-01 ~ 2026-11-10",
+  "image": "https://emart24.co.kr/image/MjgwMDA3",
+  "url": "https://emart24.co.kr/event/8402",
+  "fetched_at": "2026-11-01 08:08"
+ },
+ {
+  "store": "이마트24",
+  "title": "11월 신규가입 이벤트",
+  "period": "2026-11-01 ~ 2026-11-30",
+  "image": "https://emart24.co.kr/image/Mjc5OTkw",
+  "url": "https://emart24.co.kr/event/8401",
+  "fetched_at": "2026-11-01 08:08"
+ },
+ {
+  "store": "이마트24",
+  "title": "11월 제휴이벤트",
+  "period": "2026-11-01 ~ 2026-11-30",
+  "image": "https://emart24.co.kr/image/Mjc5OTg2",
+  "url": "https://emart24.co.kr/event/8400",
+  "fetched_at": "2026-11-01 08:08"
  },
  {
   "store": "이마트24",
@@ -53,7 +165,7 @@
   "period": "2026-10-16 ~ 2026-11-08",
   "image": "https://emart24.co.kr/image/Mjc5OTgz",
   "url": "https://emart24.co.kr/event/8399",
-  "fetched_at": "2026-10-31 23:15"
+  "fetched_at": "2026-11-01 08:08"
  },
  {
   "store": "이마트24",
@@ -61,7 +173,7 @@
   "period": "2026-10-16 ~ 2026-11-15",
   "image": "https://emart24.co.kr/image/Mjc5OTcy",
   "url": "https://emart24.co.kr/event/8380",
-  "fetched_at": "2026-10-31 23:15"
+  "fetched_at": "2026-11-01 08:08"
  },
  {
   "store": "이마트24",
@@ -69,7 +181,7 @@
   "period": "2026-10-19 ~ 2026-11-18",
   "image": "https://emart24.co.kr/image/Mjc5OTYy",
   "url": "https://emart24.co.kr/event/8379",
-  "fetched_at": "2026-10-31 23:15"
+  "fetched_at": "2026-11-01 08:08"
  },
  {
   "store": "이마트24",
@@ -77,7 +189,7 @@
   "period": "2026-10-14 ~ 2026-11-16",
   "image": "https://emart24.co.kr/image/Mjc5OTMw",
   "url": "https://emart24.co.kr/event/8360",
-  "fetched_at": "2026-10-31 23:15"
+  "fetched_at": "2026-11-01 08:08"
  },
  {
   "store": "이마트24",
@@ -85,23 +197,7 @@
   "period": "2026-10-12 ~ 2026-11-11",
   "image": "https://emart24.co.kr/image/Mjc5Njk2",
   "url": "https://emart24.co.kr/event/8300",
-  "fetched_at": "2026-10-31 23:15"
- },
- {
-  "store": "이마트24",
-  "title": "10월 옐로우 리뉴얼 이벤트",
-  "period": "2026-10-01 ~ 2026-10-31",
-  "image": "https://emart24.co.kr/image/Mjc5NjQ0",
-  "url": "https://emart24.co.kr/event/8279",
-  "fetched_at": "2026-10-31 23:15"
- },
- {
-  "store": "이마트24",
-  "title": "10월 보틀오더 쿠폰 할인 모아보기!",
-  "period": "2026-10-01 ~ 2026-10-31",
-  "image": "https://emart24.co.kr/image/Mjc5NjI2",
-  "url": "https://emart24.co.kr/event/8272",
-  "fetched_at": "2026-10-31 23:15"
+  "fetched_at": "2026-11-01 08:08"
  },
  {
   "store": "이마트24",
@@ -109,111 +205,7 @@
   "period": "2026-10-01 ~ 2026-10-31",
   "image": "https://emart24.co.kr/image/MjgwMTY0",
   "url": "https://emart24.co.kr/event/8271",
-  "fetched_at": "2026-10-31 23:15"
- },
- {
-  "store": "이마트24",
-  "title": "10월 BC/NH카드 할인 이벤트",
-  "period": "2026-10-01 ~ 2026-10-31",
-  "image": "https://emart24.co.kr/image/Mjc5NjUx",
-  "url": "https://emart24.co.kr/event/8270",
-  "fetched_at": "2026-10-31 23:15"
- },
- {
-  "store": "이마트24",
-  "title": "10월 신상 신선식품 사전예약 이벤트",
-  "period": "2026-10-01 ~ 2026-10-31",
-  "image": "https://emart24.co.kr/image/MjgwMTAy",
-  "url": "https://emart24.co.kr/event/8269",
-  "fetched_at": "2026-10-31 23:15"
- },
- {
-  "store": "이마트24",
-  "title": "10월 ALLDAY 건강&뷰티 이벤트",
-  "period": "2026-10-01 ~ 2026-10-31",
-  "image": "https://emart24.co.kr/image/Mjc5NTk5",
-  "url": "https://emart24.co.kr/event/8268",
-  "fetched_at": "2026-10-31 23:15"
- },
- {
-  "store": "이마트24",
-  "title": "10월 24오락실 이벤트",
-  "period": "2026-10-01 ~ 2026-10-31",
-  "image": "https://emart24.co.kr/image/Mjc5NTk1",
-  "url": "https://emart24.co.kr/event/8267",
-  "fetched_at": "2026-10-31 23:15"
- },
- {
-  "store": "이마트24",
-  "title": "10월 월간 도시락 이벤트",
-  "period": "2026-10-01 ~ 2026-10-31",
-  "image": "https://emart24.co.kr/image/Mjc5NTkx",
-  "url": "https://emart24.co.kr/event/8266",
-  "fetched_at": "2026-10-31 23:15"
- },
- {
-  "store": "이마트24",
-  "title": "10월 뽀니 오늘픽업 이벤트",
-  "period": "2026-09-30 ~ 2026-10-31",
-  "image": "https://emart24.co.kr/image/Mjc5NTg3",
-  "url": "https://emart24.co.kr/event/8265",
-  "fetched_at": "2026-10-31 23:15"
- },
- {
-  "store": "이마트24",
-  "title": "10월 웰니스 상품 할인 이벤트",
-  "period": "2026-10-01 ~ 2026-10-31",
-  "image": "https://emart24.co.kr/image/Mjc5NTcy",
-  "url": "https://emart24.co.kr/event/8263",
-  "fetched_at": "2026-10-31 23:15"
- },
- {
-  "store": "이마트24",
-  "title": "10월 월간 신상 하이라이트 이벤트",
-  "period": "2026-10-01 ~ 2026-10-31",
-  "image": "https://emart24.co.kr/image/Mjc5NTY4",
-  "url": "https://emart24.co.kr/event/8262",
-  "fetched_at": "2026-10-31 23:15"
- },
- {
-  "store": "이마트24",
-  "title": "10월 샌드위치 할인 이벤트",
-  "period": "2026-10-01 ~ 2026-10-31",
-  "image": "https://emart24.co.kr/image/Mjc5NjM5",
-  "url": "https://emart24.co.kr/event/8261",
-  "fetched_at": "2026-10-31 23:15"
- },
- {
-  "store": "이마트24",
-  "title": "10월 CJ 브랜드페스타 이벤트",
-  "period": "2026-10-01 ~ 2026-10-31",
-  "image": "https://emart24.co.kr/image/Mjc5NTYw",
-  "url": "https://emart24.co.kr/event/8260",
-  "fetched_at": "2026-10-31 23:15"
- },
- {
-  "store": "이마트24",
-  "title": "10월 돈아낄팁 이벤트",
-  "period": "2026-10-01 ~ 2026-10-31",
-  "image": "https://emart24.co.kr/image/Mjc5NTU2",
-  "url": "https://emart24.co.kr/event/8259",
-  "fetched_at": "2026-10-31 23:15"
- },
- {
-  "store": "이마트24",
-  "title": "10월 앱 통합바코드 프로모션",
-  "period": "2026-10-01 ~ 2026-10-31",
-  "image": "https://emart24.co.kr/image/Mjc5MzUx",
-  "url": "https://emart24.co.kr/event/8199",
-  "fetched_at": "2026-10-31 23:15"
- },
- {
-  "store": "이마트24",
-  "title": "10월 제휴이벤트",
-  "period": "2026-10-01 ~ 2026-10-31",
-  "image": "https://emart24.co.kr/image/Mjc5MzEx",
-  "url": "https://emart24.co.kr/event/8180",
-  "fetched_at": "2026-10-31 23:15"
+  "fetched_at": "2026-11-01 08:08"
  },
  {
   "store": "이마트에브리데이",
@@ -221,15 +213,15 @@
   "period": "2026-10-30 ~ 2026-11-04",
   "image": null,
   "url": "https://emile.emarteveryday.co.kr/exhibition/ExhibitionView?uid=bKjFpmF2vyaVSccZdlrK",
-  "fetched_at": "2026-10-31 23:15"
+  "fetched_at": "2026-11-01 08:08"
  },
  {
   "store": "이마트에브리데이",
-  "title": "전단기획전 금토 2일간! 스낵 3개 구매시 30%할인",
-  "period": "2026-10-30 ~ 2026-10-31",
+  "title": "전단기획전 컵라면 2+1",
+  "period": "2026-11-01 ~ 2026-11-01",
   "image": null,
-  "url": "https://emile.emarteveryday.co.kr/exhibition/ExhibitionView?uid=ijPuJlGcCap1wQVhIiwo",
-  "fetched_at": "2026-10-31 23:15"
+  "url": "https://emile.emarteveryday.co.kr/exhibition/ExhibitionView?uid=KqG1ndqEHYO2iJyoYjFY",
+  "fetched_at": "2026-11-01 08:08"
  },
  {
   "store": "이마트에브리데이",
@@ -237,7 +229,7 @@
   "period": "2026-10-30 ~ 2026-11-04",
   "image": null,
   "url": "https://emile.emarteveryday.co.kr/exhibition/ExhibitionView?uid=ITFgFh80r727fVD54DTP",
-  "fetched_at": "2026-10-31 23:15"
+  "fetched_at": "2026-11-01 08:08"
  },
  {
   "store": "이마트에브리데이",
@@ -245,7 +237,7 @@
   "period": "2026-10-30 ~ 2026-11-04",
   "image": null,
   "url": "https://emile.emarteveryday.co.kr/exhibition/ExhibitionView?uid=6fxgGS47IZVL6In8RoqI",
-  "fetched_at": "2026-10-31 23:15"
+  "fetched_at": "2026-11-01 08:08"
  },
  {
   "store": "이마트에브리데이",
@@ -253,7 +245,7 @@
   "period": "2026-10-30 ~ 2026-11-04",
   "image": null,
   "url": "https://emile.emarteveryday.co.kr/exhibition/ExhibitionView?uid=fBlv35lTJ5c0xOpIYFxl",
-  "fetched_at": "2026-10-31 23:15"
+  "fetched_at": "2026-11-01 08:08"
  },
  {
   "store": "이마트에브리데이",
@@ -261,7 +253,7 @@
   "period": "2026-10-30 ~ 2026-11-04",
   "image": null,
   "url": "https://emile.emarteveryday.co.kr/exhibition/ExhibitionView?uid=onUQ7A8UOqPLuWMbUPCw",
-  "fetched_at": "2026-10-31 23:15"
+  "fetched_at": "2026-11-01 08:08"
  },
  {
   "store": "이마트에브리데이",
@@ -269,7 +261,7 @@
   "period": "2026-10-30 ~ 2026-11-04",
   "image": null,
   "url": "https://emile.emarteveryday.co.kr/exhibition/ExhibitionView?uid=Ia1Rtsu1xS4ZGQdl1Np3",
-  "fetched_at": "2026-10-31 23:15"
+  "fetched_at": "2026-11-01 08:08"
  },
  {
   "store": "이마트에브리데이",
@@ -277,7 +269,7 @@
   "period": "2026-10-30 ~ 2026-11-04",
   "image": null,
   "url": "https://emile.emarteveryday.co.kr/exhibition/ExhibitionView?uid=dM174jMgXDKODfn0ydQ0",
-  "fetched_at": "2026-10-31 23:15"
+  "fetched_at": "2026-11-01 08:08"
  },
  {
   "store": "이마트에브리데이",
@@ -285,7 +277,7 @@
   "period": "2026-10-30 ~ 2026-11-04",
   "image": null,
   "url": "https://emile.emarteveryday.co.kr/exhibition/ExhibitionView?uid=HH1WiF8ZPB44PSA6OKp5",
-  "fetched_at": "2026-10-31 23:15"
+  "fetched_at": "2026-11-01 08:08"
  },
  {
   "store": "이마트에브리데이",
@@ -293,7 +285,7 @@
   "period": "2026-10-30 ~ 2026-11-04",
   "image": null,
   "url": "https://emile.emarteveryday.co.kr/exhibition/ExhibitionView?uid=SFwSStQwdmibCemFSzGi",
-  "fetched_at": "2026-10-31 23:15"
+  "fetched_at": "2026-11-01 08:08"
  },
  {
   "store": "이마트에브리데이",
@@ -301,7 +293,7 @@
   "period": "2026-10-30 ~ 2026-11-11",
   "image": null,
   "url": "https://emile.emarteveryday.co.kr/exhibition/ExhibitionView?uid=Sds27TSRzkLMBdrJ8vtv",
-  "fetched_at": "2026-10-31 23:15"
+  "fetched_at": "2026-11-01 08:08"
  },
  {
   "store": "이마트에브리데이",
@@ -309,15 +301,15 @@
   "period": "2026-10-30 ~ 2026-11-11",
   "image": null,
   "url": "https://emile.emarteveryday.co.kr/exhibition/ExhibitionView?uid=o0w8JKgEz8gM2jBtzs8F",
-  "fetched_at": "2026-10-31 23:15"
+  "fetched_at": "2026-11-01 08:08"
  },
  {
   "store": "이마트에브리데이",
   "title": "전단기획전 무이자 최대12개월+카드할인 5% 쓱데이 특가!",
-  "period": "2026-10-29 ~ 2026-10-31",
+  "period": "2026-11-01 ~ 2026-11-04",
   "image": null,
   "url": "https://emile.emarteveryday.co.kr/exhibition/ExhibitionView?uid=sDaCUBP17L6PVh4WN0Lu",
-  "fetched_at": "2026-10-31 23:15"
+  "fetched_at": "2026-11-01 08:08"
  },
  {
   "store": "이마트에브리데이",
@@ -325,15 +317,7 @@
   "period": "2026-10-29 ~ 2026-11-04",
   "image": null,
   "url": "https://emile.emarteveryday.co.kr/exhibition/ExhibitionView?uid=FNvJDP3luxfX2k06Rfd3",
-  "fetched_at": "2026-10-31 23:15"
- },
- {
-  "store": "이마트에브리데이",
-  "title": "전단기획전 무거운 쌀 택배로 받아보세요!",
-  "period": "2026-09-15 ~ 2026-10-31",
-  "image": null,
-  "url": "https://emile.emarteveryday.co.kr/exhibition/ExhibitionView?uid=iidIK5etjbUqErC7S6aS",
-  "fetched_at": "2026-10-31 23:15"
+  "fetched_at": "2026-11-01 08:08"
  },
  {
   "store": "이마트에브리데이",
@@ -341,14 +325,14 @@
   "period": "2026-10-28 ~ 2026-11-04",
   "image": null,
   "url": "https://emile.emarteveryday.co.kr/exhibition/ExhibitionView?uid=HRPKtRqKFGCszVA54rn7",
-  "fetched_at": "2026-10-31 23:15"
+  "fetched_at": "2026-11-01 08:08"
  },
  {
   "store": "이마트에브리데이",
   "title": "전단기획전 이번 달 쇼핑 종결!",
-  "period": "2026-10-01 ~ 2026-10-31",
+  "period": "2026-11-01 ~ 2026-11-30",
   "image": null,
-  "url": "https://emile.emarteveryday.co.kr/exhibition/ExhibitionView?uid=VBGi07azdnguAGGEFqaG",
-  "fetched_at": "2026-10-31 23:15"
+  "url": "https://emile.emarteveryday.co.kr/exhibition/ExhibitionView?uid=QKKCMZnRBuect4qTOqBt",
+  "fetched_at": "2026-11-01 08:08"
  }
 ]
