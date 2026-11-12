@@ -1,85 +1,85 @@
 {
- "fetched_at": "2026-11-12 00:51",
+ "fetched_at": "2026-11-12 11:03",
  "basis": "쿠팡 검색 랭킹",
  "items": [
   {
-   "name": "삼성전자 갤럭시 S24 자급제, 그라파이트, 256GB",
-   "price": 479000,
-   "image": "https://img4c.coupangcdn.com/image/vendor_inventory/3bbc/2f9c5a3db3ee305b0bd47d52deeb90ed308f7e677976c9de8bb50cd58a7b.png",
-   "url": "https://link.coupang.com/re/AFFSDP?lptag=AF5600192&pageKey=7735827110&itemId=29141048819&vendorItemId=96064647464&traceid=V0-153-282b031b8a7c58c8&clickBeacon=b076de00-dde7-11f1-932f-6e32fcf2741d%7E3&requestid=20261112005059268321878851&token=31850C%7CMIXED&pt=1&slot=1",
-   "rocket": false,
+   "name": "삼성전자 갤럭시 A18 자급제 SM-A185N",
+   "price": 396900,
+   "image": "https://img5c.coupangcdn.com/image/retail/images/341252655712726-8d7d45fc-c035-46ed-8a2b-b62a45f3b15c.jpg",
+   "url": "https://link.coupang.com/re/AFFSDP?lptag=AF5600192&pageKey=9779807542&itemId=29278212866&vendorItemId=96194958022&traceid=V0-153-ce6f1526fbd49ff3&requestid=20261112110242473158010302&token=31850C%7CMIXED&pt=0&slot=6",
+   "rocket": true,
    "rank": 1
   },
   {
-   "name": "Apple 아이폰 12 자급제",
-   "price": 568000,
-   "image": "https://image3.coupangcdn.com/image/vendor_inventory/380f/de9bfecd67c179e8c3b5e692ad3ad1b59e0044b76e2862771980bde08d0a.jpg",
-   "url": "https://link.coupang.com/re/AFFSDP?lptag=AF5600192&pageKey=2251587935&itemId=3849412608&vendorItemId=91253502917&traceid=V0-153-dd5de198f8098c0d&requestid=20261112005100180006489962&token=31850C%7CMIXED&pt=0&slot=6",
+   "name": "Apple 아이폰 12 mini 자급제",
+   "price": 448000,
+   "image": "https://static.coupangcdn.com/image/vendor_inventory/2476/9dd1082712af6478ea4c2fc137f70f1395a248875145353d2724e2f8ff97.jpg",
+   "url": "https://link.coupang.com/re/AFFSDP?lptag=AF5600192&pageKey=9712213732&itemId=29059331705&vendorItemId=96263628436&traceid=V0-153-4292b6a428f39fea&requestid=20261112110243468006486392&token=31850C%7CMIXED&pt=0&slot=2",
    "rocket": false,
    "rank": 2
   },
   {
    "name": "삼성전자 갤럭시 A37 자급제 SM-A376N",
    "price": 522900,
-   "image": "https://img5a.coupangcdn.com/image/retail/images/210510709489953-579dfc8a-9b63-401a-a3ac-f0ac971893de.jpg",
-   "url": "https://link.coupang.com/re/AFFSDP?lptag=AF5600192&pageKey=9580733104&itemId=28598531951&vendorItemId=95542232974&traceid=V0-153-e59bd5ae7a201ee4&requestid=20261112005101382230834576&token=31850C%7CMIXED&pt=0&slot=1",
+   "image": "https://image11.coupangcdn.com/image/retail/images/210510709489953-579dfc8a-9b63-401a-a3ac-f0ac971893de.jpg",
+   "url": "https://link.coupang.com/re/AFFSDP?lptag=AF5600192&pageKey=9580733104&itemId=28598531951&vendorItemId=95542232974&traceid=V0-153-e59bd5ae7a201ee4&requestid=20261112110244397276249351&token=31850C%7CGM&pt=0&slot=1",
    "rocket": true,
    "rank": 3
   },
   {
-   "name": "(공식) 이코 마인드원 K Pro 자급제폰 (나의 첫번째 세컨폰 iKKO MindOne), 펄화이트, 256GB",
-   "price": 724000,
-   "image": "https://image11.coupangcdn.com/image/vendor_inventory/b3f8/cdef419c042d9869c91ab826058e6c44301c670916c1f03e8dca0cfc2e5f.png",
-   "url": "https://link.coupang.com/re/AFFSDP?lptag=AF5600192&pageKey=9661306328&itemId=28882889978&vendorItemId=95817310329&traceid=V0-153-408bfe89e6c9a578&clickBeacon=b2662ae0-dde7-11f1-a12a-fe1a68b13501%7E3&requestid=20261112005102479226537113&token=31850C%7CMIXED&pt=1&slot=2",
-   "rocket": true,
+   "name": "삼성전자 갤럭시 S23+ 자급제",
+   "price": 529000,
+   "image": "https://img5a.coupangcdn.com/image/vendor_inventory/1abc/36ea5a897f6e2e5efedec058b0c75fd368f61e12fae6acccbc97c0a9184e.png",
+   "url": "https://link.coupang.com/re/AFFSDP?lptag=AF5600192&pageKey=9813105062&itemId=29023197038&vendorItemId=96191869826&traceid=V0-153-6ef2e74857c9a40c&requestid=20261112110245301303189175&token=31850C%7CMIXED&pt=0&slot=7",
+   "rocket": false,
    "rank": 4
   },
   {
-   "name": "삼성전자 갤럭시 S24 자급제, 블루, 256GB",
-   "price": 479000,
-   "image": "https://image10.coupangcdn.com/image/vendor_inventory/3bbc/2f9c5a3db3ee305b0bd47d52deeb90ed308f7e677976c9de8bb50cd58a7b.png",
-   "url": "https://link.coupang.com/re/AFFSDP?lptag=AF5600192&pageKey=9805648279&itemId=29364303717&vendorItemId=96064647465&traceid=V0-153-2a06741a3a2670fc&clickBeacon=b2fdaff0-dde7-11f1-a041-3cd0715b9ef9%7E3&requestid=20261112005103460094991751&token=31850C%7CMIXED&pt=1&slot=1",
+   "name": "삼성전자 갤럭시 S26 자급제 코발트 바이올렛 256GB SM-S942N",
+   "price": 1060980,
+   "image": "https://static.coupangcdn.com/image/vendor_inventory/4b91/626bbc0b8b60f7f6ddd5225139f45e740dbfd3e21b9e82b5a093aef2f16e.jpg",
+   "url": "https://link.coupang.com/re/AFFSDP?lptag=AF5600192&pageKey=9797757229&itemId=29337618193&vendorItemId=96248748452&traceid=V0-153-a8cddf066e09af2a&requestid=20261112110246342041567896&token=31850C%7CMIXED&pt=0&slot=4",
    "rocket": false,
    "rank": 5
   },
   {
    "name": "Apple 아이폰 17 자급제",
    "price": 1304160,
-   "image": "https://image1.coupangcdn.com/image/retail/images/23549401340111-688e83a8-91d7-4371-a10b-41928c1c38e9.jpg",
-   "url": "https://link.coupang.com/re/AFFSDP?lptag=AF5600192&pageKey=9024167492&itemId=26462329849&vendorItemId=93437609262&traceid=V0-153-96f1bb4c89dba906&requestid=20261112005104482158012069&token=31850C%7CMIXED&pt=0&slot=1",
+   "image": "https://img1c.coupangcdn.com/image/retail/images/23549401340111-688e83a8-91d7-4371-a10b-41928c1c38e9.jpg",
+   "url": "https://link.coupang.com/re/AFFSDP?lptag=AF5600192&pageKey=9024167492&itemId=26462329849&vendorItemId=93437609262&traceid=V0-153-96f1bb4c89dba906&requestid=20261112110247606181107476&token=31850C%7CMIXED&pt=0&slot=6",
    "rocket": true,
    "rank": 6
   },
   {
-   "name": "삼성전자 갤럭시 A35 5G 자급제, 어썸네이비, 128GB",
-   "price": 299000,
-   "image": "https://image8.coupangcdn.com/image/vendor_inventory/d8eb/0c6be579c9db4d781e2754bcd51d6b43fe69d8eef0a9fb0ef22794f82204.png",
-   "url": "https://link.coupang.com/re/AFFSDP?lptag=AF5600192&pageKey=8161274337&itemId=24765190637&vendorItemId=96070315703&traceid=V0-153-c09a52dd5bfea9ba&clickBeacon=b43e1f30-dde7-11f1-bdfb-96bf72fba8f9%7E3&requestid=20261112005105556205477351&token=31850C%7CMIXED&pt=1&slot=1",
+   "name": "삼성전자 갤럭시 A16 자급제 SM-A165N",
+   "price": 229900,
+   "image": "https://img1a.coupangcdn.com/image/vendor_inventory/176d/f1e674aed2f39843fa0f1900c71aa6ac2bedb483106e05d5bc004f1f1628.jpg",
+   "url": "https://link.coupang.com/re/AFFSDP?lptag=AF5600192&pageKey=9813102873&itemId=28758389880&vendorItemId=96215580882&traceid=V0-153-3fad7b06ac587d71&requestid=20261112110248665123157873&token=31850C%7CGM&pt=0&slot=2",
    "rocket": false,
    "rank": 7
   },
   {
    "name": "삼성전자 갤럭시 Z 플립4 5G 자급제 SM-F721N",
    "price": 245000,
-   "image": "https://image12.coupangcdn.com/image/vendor_inventory/30b7/f99c0226762b477f89f3c2287eba92a8b77a5bc29f9d6e8d76f33591f463.jpg",
-   "url": "https://link.coupang.com/re/AFFSDP?lptag=AF5600192&pageKey=6750815969&itemId=15787906725&vendorItemId=96296492041&traceid=V0-153-fa85b8c41239f4b8&requestid=20261112005106595165870189&token=31850C%7CMIXED&pt=0&slot=8",
+   "image": "https://image11.coupangcdn.com/image/vendor_inventory/30b7/f99c0226762b477f89f3c2287eba92a8b77a5bc29f9d6e8d76f33591f463.jpg",
+   "url": "https://link.coupang.com/re/AFFSDP?lptag=AF5600192&pageKey=6750815969&itemId=15787906725&vendorItemId=96296492041&traceid=V0-153-fa85b8c41239f4b8&requestid=20261112110249812226536274&token=31850C%7CGM&pt=0&slot=3",
    "rocket": false,
    "rank": 8
   },
   {
-   "name": "아이폰 16 프로 자급제 미사용 256GB 카메라 무음 이심- 색상랜덤",
-   "price": 1627510,
-   "image": "https://img2c.coupangcdn.com/image/vendor_inventory/e1af/2a474ea5929f1c1c77e8e3e3ef34365f3f4d37c8735946ecbca5585213cb.png",
-   "url": "https://link.coupang.com/re/AFFSDP?lptag=AF5600192&pageKey=9792807489&itemId=29328157404&vendorItemId=96242426098&traceid=V0-153-0d046e3932a67d9c&requestid=20261112005107660196593870&token=31850C%7CMIXED&pt=0&slot=9",
+   "name": "삼성전자 갤럭시 S25 자급제 SM-S931N",
+   "price": 645230,
+   "image": "https://image14.coupangcdn.com/image/vendor_inventory/3f27/82e5ec94ba237da618435436cc95d3944093080d9adec796ef8a1ce83dc1.png",
+   "url": "https://link.coupang.com/re/AFFSDP?lptag=AF5600192&pageKey=8493748728&itemId=24875536730&vendorItemId=96296963808&traceid=V0-153-b2aeef36c20f2fb6&requestid=20261112110251779158014794&token=31850C%7CMIXED&pt=0&slot=6",
    "rocket": false,
    "rank": 9
   },
   {
-   "name": "삼성전자 갤럭시 A18 자급제 SM-A185N",
-   "price": 396900,
-   "image": "https://image13.coupangcdn.com/image/retail/images/341252655712726-8d7d45fc-c035-46ed-8a2b-b62a45f3b15c.jpg",
-   "url": "https://link.coupang.com/re/AFFSDP?lptag=AF5600192&pageKey=9779807542&itemId=29278212866&vendorItemId=96194958022&traceid=V0-153-ce6f1526fbd49ff3&requestid=20261112005059268321878851&token=31850C%7CMIXED&pt=0&slot=5",
-   "rocket": true,
+   "name": "Apple 아이폰 12 자급제",
+   "price": 568000,
+   "image": "https://img1a.coupangcdn.com/image/vendor_inventory/380f/de9bfecd67c179e8c3b5e692ad3ad1b59e0044b76e2862771980bde08d0a.jpg",
+   "url": "https://link.coupang.com/re/AFFSDP?lptag=AF5600192&pageKey=2251587935&itemId=3849412608&vendorItemId=91253502917&traceid=V0-153-dd5de198f8098c0d&requestid=20261112110243468006486392&token=31850C%7CMIXED&pt=0&slot=3",
+   "rocket": false,
    "rank": 10
   }
  ]
