@@ -1,18 +1,18 @@
 {
- "fetched_at": "2026-11-25 12:31",
+ "fetched_at": "2026-11-26 03:32",
  "items": [
   {
    "name": "코카콜라 오리지널",
    "price": 16500,
-   "image": "https://image4.coupangcdn.com/image/retail/images/89720961368927-a2bc7a57-cb63-4376-b222-56cce7c5c2fd.jpg",
+   "image": "https://image3.coupangcdn.com/image/retail/images/89720961368927-a2bc7a57-cb63-4376-b222-56cce7c5c2fd.jpg",
    "url": "https://link.coupang.com/re/AFFSDP?lptag=AF5600192&pageKey=9371774&itemId=21184770164&vendorItemId=88377301422&traceid=V0-143-90293e766f4ba76f&pt=0&slot=1",
    "rocket": true,
    "category": "식품"
   },
   {
    "name": "파워에이드 제로",
-   "price": 19760,
-   "image": "https://img1c.coupangcdn.com/image/retail/images/5393230486688-34423626-75ea-47f7-b83c-bd0f3ca24d99.jpg",
+   "price": 19600,
+   "image": "https://img2a.coupangcdn.com/image/retail/images/5393230486688-34423626-75ea-47f7-b83c-bd0f3ca24d99.jpg",
    "url": "https://link.coupang.com/re/AFFSDP?lptag=AF5600192&pageKey=7168704316&itemId=15509101&vendorItemId=90861125615&traceid=V0-143-322ca15e5540b494&pt=0&slot=2",
    "rocket": true,
    "category": "식품"
@@ -20,7 +20,7 @@
   {
    "name": "조지아 크래프트 아메리카노",
    "price": 22680,
-   "image": "https://img1a.coupangcdn.com/image/retail/images/612679576866745-4943478e-3529-417a-9e9e-1f447e90c1d1.jpg",
+   "image": "https://img2a.coupangcdn.com/image/retail/images/612679576866745-4943478e-3529-417a-9e9e-1f447e90c1d1.jpg",
    "url": "https://link.coupang.com/re/AFFSDP?lptag=AF5600192&pageKey=8245824385&itemId=27239055720&vendorItemId=94034890092&traceid=V0-143-00e11449d3264cef&pt=0&slot=3",
    "rocket": true,
    "category": "식품"
@@ -28,170 +28,170 @@
   {
    "name": "환타 오렌지",
    "price": 17270,
-   "image": "https://static.coupangcdn.com/image/retail/images/259340484537727-1c68f6ea-ba70-4cbb-9280-a09da41b8484.jpg",
+   "image": "https://image15.coupangcdn.com/image/retail/images/259340484537727-1c68f6ea-ba70-4cbb-9280-a09da41b8484.jpg",
    "url": "https://link.coupang.com/re/AFFSDP?lptag=AF5600192&pageKey=8087630748&itemId=24239479510&vendorItemId=3001012637&traceid=V0-143-21a72b06995b856e&pt=0&slot=4",
    "rocket": true,
    "category": "식품"
   },
   {
-   "name": "베네통키즈 아동용 방울 넥워머",
-   "price": 15500,
-   "image": "https://image8.coupangcdn.com/image/rs_quotation_api/3psec0vc/bcd7126fcd2c46bba1d0ced536b4a5c7.jpg",
-   "url": "https://link.coupang.com/re/AFFSDP?lptag=AF5600192&pageKey=8386807762&itemId=24240633962&vendorItemId=91257669944&traceid=V0-143-8ead9ce87caa575e&pt=0&slot=5",
-   "rocket": true,
-   "category": "패션잡화"
-  },
-  {
-   "name": "양념 칼집 돼지 왕구이",
-   "price": 12280,
-   "image": "https://image11.coupangcdn.com/image/retail/images/131823400541609-2b5c8647-5c0c-4e20-875d-f67944d46b0b.jpg",
-   "url": "https://link.coupang.com/re/AFFSDP?lptag=AF5600192&pageKey=8349038065&itemId=24118498612&vendorItemId=91137717168&traceid=V0-143-a5ea5d7835319acd&pt=0&slot=6",
+   "name": "설성목장 무항생제 한우 1등급 이상 목심 샤브샤브용 (냉동)",
+   "price": 15900,
+   "image": "https://img3a.coupangcdn.com/image/retail/images/3554833522874091-9df5114e-24c8-43ce-9cd0-a791c64575a0.jpg",
+   "url": "https://link.coupang.com/re/AFFSDP?lptag=AF5600192&pageKey=6475676617&itemId=14152425134&vendorItemId=81398925782&traceid=V0-143-05fcdadc0e3d91c2&pt=0&slot=5",
    "rocket": true,
    "category": "로켓프레시"
   },
   {
-   "name": "도그아이 강아지 스웨이드 무스탕",
-   "price": 16060,
-   "image": "https://img3c.coupangcdn.com/image/rs_quotation_api/61t8hkeq/f5e1919a288c4c49a68b6262d522faaa.jpg",
-   "url": "https://link.coupang.com/re/AFFSDP?lptag=AF5600192&pageKey=8475780693&itemId=27190447841&vendorItemId=94157957430&traceid=V0-143-e6e5e548662327d5&pt=0&slot=7",
-   "rocket": true,
-   "category": "반려/애완용품"
-  },
-  {
-   "name": "마르디메크르디 여성용 WOOL MAXI SINGLE COAT",
-   "price": 208000,
-   "image": "https://img2a.coupangcdn.com/image/rs_quotation_api/3acgfbif/bf20014ff8804c12bfad03c2ac7ee815.jpg",
-   "url": "https://link.coupang.com/re/AFFSDP?lptag=AF5600192&pageKey=9793781147&itemId=29323508497&vendorItemId=96237973530&traceid=V0-143-041ac8e8c471bc53&pt=0&slot=8",
-   "rocket": true,
-   "category": "패션의류"
-  },
-  {
-   "name": "올덴 화롯불 특대형 대용량 핫팩 150g",
-   "price": 9800,
-   "image": "https://img2c.coupangcdn.com/image/retail/images/2cf1a820-1bac-4329-bde1-06a4501de7ef11033529281914726262.png",
-   "url": "https://link.coupang.com/re/AFFSDP?lptag=AF5600192&pageKey=9716550625&itemId=29080024599&vendorItemId=96005888789&traceid=V0-143-0a8da94753f844a5&pt=0&slot=9",
+   "name": "홈스타 핑크파워 욕실 찌든때 클리너",
+   "price": 12140,
+   "image": "https://img1c.coupangcdn.com/image/retail/images/259610319417673-0c82f803-0be8-4422-af2a-de9110469104.jpg",
+   "url": "https://link.coupang.com/re/AFFSDP?lptag=AF5600192&pageKey=8165713116&itemId=22203096903&vendorItemId=89249238105&traceid=V0-143-ecc2efd71f9c4460&pt=0&slot=6",
    "rocket": true,
    "category": "생활용품"
-  },
-  {
-   "name": "[로켓프레시] 프레시몬 호주산 카라카라 오렌지",
-   "price": 8900,
-   "image": "https://image2.coupangcdn.com/image/retail/images/1594697474759575-d90981db-0c3d-4a46-b2cd-87ea5157cd7e.jpg",
-   "url": "https://link.coupang.com/re/AFFSDP?lptag=AF5600192&pageKey=8266895091&itemId=23821381559&vendorItemId=90845086081&traceid=V0-143-f9298e4822063c71&pt=0&slot=10",
-   "rocket": true,
-   "category": "로켓프레시"
   },
   {
    "name": "홈럭스 파워수압 필터 샤워기 + 필터 5개 + 샤워호스 1.5M + 거치데 안마 샤워기세트 8pcs",
    "price": 13480,
-   "image": "https://img1c.coupangcdn.com/image/vendor_inventory/db91/6540d087fb0ab9f6ded2f7808f123ad816e10da3511aa46990ee5d28b33f.png",
-   "url": "https://link.coupang.com/re/AFFSDP?lptag=AF5600192&pageKey=9150861959&itemId=26945531221&vendorItemId=95655478697&traceid=V0-143-23c58c62889d9fb8&pt=0&slot=11",
+   "image": "https://img4a.coupangcdn.com/image/vendor_inventory/3fef/0415125e70e478e9245966f278feea584d1a24632cd0658e9b5f43c31714.png",
+   "url": "https://link.coupang.com/re/AFFSDP?lptag=AF5600192&pageKey=9150861959&itemId=26945531221&vendorItemId=95655478697&traceid=V0-143-23c58c62889d9fb8&pt=0&slot=7",
    "rocket": true,
    "category": "생활용품"
   },
   {
-   "name": "네파 세이프티 패딩 넥워머 7JF7992",
-   "price": 11450,
-   "image": "https://img4c.coupangcdn.com/image/retail/images/2026/10/15/13/9/e0515f97-b147-4b2a-b5a7-fbd1d3ad62d1.jpg",
-   "url": "https://link.coupang.com/re/AFFSDP?lptag=AF5600192&pageKey=9734159335&itemId=29130467140&vendorItemId=96190080767&traceid=V0-143-179e9e10ef15b8b2&pt=0&slot=12",
-   "rocket": true,
-   "category": "스포츠/레저용품"
-  },
-  {
-   "name": "케이원푸드 국내산 냉장 순살 사이 정육 1kg",
-   "price": 10550,
-   "image": "https://image10.coupangcdn.com/image/vendor_inventory/8e27/da380bf0985dbd31486d5054f6ce466a772755d2ccdbb9ff3137c25875f9.png",
-   "url": "https://link.coupang.com/re/AFFSDP?lptag=AF5600192&pageKey=7849555394&itemId=21391800213&vendorItemId=88448518717&traceid=V0-143-6ec0d7a91d727079&pt=0&slot=13",
-   "rocket": false,
-   "category": "식품"
-  },
-  {
-   "name": "파스퇴르 우유 바나나",
-   "price": 14210,
-   "image": "https://image1.coupangcdn.com/image/retail/images/264541401484743-04416303-6bd2-46db-8c9c-5e537393739f.png",
-   "url": "https://link.coupang.com/re/AFFSDP?lptag=AF5600192&pageKey=73256887&itemId=244206646&vendorItemId=3601086321&traceid=V0-143-a5cc6a2731c88f1d&pt=0&slot=14",
-   "rocket": true,
-   "category": "식품"
-  },
-  {
-   "name": "[밸리콘도] 스탠다드 트윈_16평",
-   "price": 77000,
-   "image": "https://static.coupangcdn.com/image/travel_reactor/travelSeller/resort/A00161284/0480fd7e-639d-4e70-b9cb-cd694512ca07.jpg",
-   "url": "https://link.coupang.com/re/AFFTDP?lptag=AF5600192&pageKey=10000011260915&vendorItemId=70000278991363&itemId=20002199748693&traceid=V0-143-dad1f2b44be15b71&pt=0&slot=15",
-   "rocket": false,
-   "category": "국내투어"
-  },
-  {
-   "name": "스튜디오 산전망",
-   "price": 124900,
-   "image": "https://image14.coupangcdn.com/image/travel_reactor/travelSeller/resort/A01483633/ff52ee79-0e4f-477d-ae83-39df99dd9c65.jpg",
-   "url": "https://link.coupang.com/re/AFFTDP?lptag=AF5600192&pageKey=10000011349449&vendorItemId=70000283667469&itemId=20002206555076&traceid=V0-143-01fdd4603326b546&pt=0&slot=16",
-   "rocket": false,
-   "category": "국내투어"
-  },
-  {
-   "name": "홈플래닛 알카라인 건전지 패밀리팩 AA + AAA",
-   "price": 9990,
-   "image": "https://img1a.coupangcdn.com/image/retail/images/763832199794351-dfe879ef-7c76-4cb0-96a3-8d7d2ee605a0.jpg",
-   "url": "https://link.coupang.com/re/AFFSDP?lptag=AF5600192&pageKey=307012900&itemId=968081239&vendorItemId=5375282441&traceid=V0-143-d7485a388d8ce80e&pt=0&slot=17",
-   "rocket": true,
-   "category": "생활용품"
-  },
-  {
-   "name": "곰곰 닭 목살 (냉동)",
-   "price": 9900,
-   "image": "https://img1c.coupangcdn.com/image/retail/images/549373766650030-fee78455-09d2-4c9c-a3c2-b496effb90eb.jpg",
-   "url": "https://link.coupang.com/re/AFFSDP?lptag=AF5600192&pageKey=8255376550&itemId=23773307732&vendorItemId=90797562304&traceid=V0-143-c2a1a9660e483091&pt=0&slot=18",
-   "rocket": true,
-   "category": "로켓프레시"
-  },
-  {
-   "name": "[로켓프레시] 바른씨 생연어 (냉장)",
-   "price": 19990,
-   "image": "https://image8.coupangcdn.com/image/rs_quotation_api/uxtjiv3x/99fa8b76bf2b4cdfbcd6ac86550cd31d.jpg",
-   "url": "https://link.coupang.com/re/AFFSDP?lptag=AF5600192&pageKey=8693331148&itemId=25240612518&vendorItemId=92236662172&traceid=V0-143-938e04dda200dd8f&pt=0&slot=19",
-   "rocket": true,
-   "category": "로켓프레시"
-  },
-  {
-   "name": "2026년형 틴도우 스팀 습식청소기 18000pa강력 흡입 소파 매트리스 패브릭청소기 고온살균 침구청소기+브러쉬 5종",
-   "price": 213200,
-   "image": "https://image12.coupangcdn.com/image/vendor_inventory/486e/1e6c9d8708cfe42cf671d7890f522daa7d2db8772189a96def048d5ebcb0.jpg",
-   "url": "https://link.coupang.com/re/AFFSDP?lptag=AF5600192&pageKey=9485256179&itemId=28245050787&vendorItemId=95198602734&traceid=V0-143-b1341c8e4699d280&pt=0&slot=20",
+   "name": "에이수스 2026 비보북 S 14 코어Ultra5 인텔 14세대",
+   "price": 1699000,
+   "image": "https://img5c.coupangcdn.com/image/rs_quotation_api/8zg8ba05/1efa1241ea424ff6ba8f642e057d6461.jpg",
+   "url": "https://link.coupang.com/re/AFFSDP?lptag=AF5600192&pageKey=9532064205&itemId=28427000869&vendorItemId=95377927929&traceid=V0-143-43c3881331270fdd&pt=0&slot=8",
    "rocket": true,
    "category": "가전디지털"
   },
   {
-   "name": "수영장불포함★디럭스 트윈룸",
-   "price": 115500,
-   "image": "https://image10.coupangcdn.com/image/travel_reactor/travelSeller/hotel/A01529338/153f7118-968a-4f38-bf67-e47749122893.jpg",
-   "url": "https://link.coupang.com/re/AFFTDP?lptag=AF5600192&pageKey=10000011295932&vendorItemId=70000257941638&itemId=20002175725178&traceid=V0-143-a504703d7b079db1&pt=0&slot=21",
+   "name": "야마에이 이소노하나 다시마 젤리",
+   "price": 25850,
+   "image": "https://img5a.coupangcdn.com/image/vendor_inventory/73f7/f8038cb2daa31df1e7f4e9132bbf10b5b4ec77bfccf1dbdd8ca02f9c9331.png",
+   "url": "https://link.coupang.com/re/AFFSDP?lptag=AF5600192&pageKey=9696453490&itemId=28706781324&vendorItemId=95670485732&traceid=V0-143-6adae856b8cdbd60&pt=0&slot=9",
    "rocket": false,
-   "category": "국내투어"
+   "category": "식품"
   },
   {
-   "name": "가규 국내생산 팬트리 정리함 리빙박스",
-   "price": 10600,
-   "image": "https://image5.coupangcdn.com/image/retail/images/67048576252923-b1229c3f-8ec2-4d41-9047-fe4915fb9cbb.jpg",
-   "url": "https://link.coupang.com/re/AFFSDP?lptag=AF5600192&pageKey=6870548106&itemId=16434017235&vendorItemId=83624795042&traceid=V0-143-86161f54438536fe&pt=0&slot=22",
+   "name": "위칙 소독 섬유유연제 본품",
+   "price": 24000,
+   "image": "https://img5c.coupangcdn.com/image/1025_amir_coupang_oct_80k/5028/7ea8d8c267e407eec9986436e4ae707d14bbf178ad4ad756c9f131378708.jpg",
+   "url": "https://link.coupang.com/re/AFFSDP?lptag=AF5600192&pageKey=7429410266&itemId=19292423636&vendorItemId=85764060260&traceid=V0-143-ae13bdfea43d5b7f&pt=0&slot=10",
    "rocket": true,
    "category": "생활용품"
   },
   {
-   "name": "베베핀 가방스티커 BEST 생생 동물 + 과일 채소 + 탈것 + 바다동물 4종 세트",
-   "price": 16000,
-   "image": "https://image13.coupangcdn.com/image/retail/images/2025/04/25/12/4/8ff0db51-da64-4794-8774-f008edfa130d.jpg",
-   "url": "https://link.coupang.com/re/AFFSDP?lptag=AF5600192&pageKey=8736410379&itemId=25390049672&vendorItemId=92383799011&traceid=V0-143-2be4192e1ab2605c&pt=0&slot=23",
+   "name": "칼보 스페인산 올리브오일 참치캔 3p",
+   "price": 15960,
+   "image": "https://image7.coupangcdn.com/image/retail/images/115145306974470-b9d21b12-de58-454b-873e-c227c1384d5c.jpg",
+   "url": "https://link.coupang.com/re/AFFSDP?lptag=AF5600192&pageKey=9595377472&itemId=28650571376&vendorItemId=95593039230&traceid=V0-143-e98d464476b514c5&pt=0&slot=11",
    "rocket": true,
-   "category": "도서/음반"
+   "category": "식품"
   },
   {
-   "name": "로라메르시에 매트 래디언스 베이크드 파우더 새틴 팩트 하이라이터 7.5g",
-   "price": 66580,
-   "image": "https://static.coupangcdn.com/image/retail/images/784768460484275-85742f55-ee3b-4514-8eef-16fd3964b2f5.jpg",
-   "url": "https://link.coupang.com/re/AFFSDP?lptag=AF5600192&pageKey=7994155471&itemId=335285978&vendorItemId=3822597178&traceid=V0-143-fd95958728e95f72&pt=0&slot=24",
+   "name": "Bebeen 시그니처 유아물티슈 캡형",
+   "price": 12400,
+   "image": "https://img2a.coupangcdn.com/image/retail/images/53944486079434-671b1593-ba08-4f19-a8b8-df1a595129d1.jpg",
+   "url": "https://link.coupang.com/re/AFFSDP?lptag=AF5600192&pageKey=9425934299&itemId=18449938743&vendorItemId=70440100958&traceid=V0-143-ff8b9166720d66bb&pt=0&slot=12",
    "rocket": true,
-   "category": "뷰티"
+   "category": "출산/유아"
+  },
+  {
+   "name": "FANOBO 스테인리스 스틸 다기능 냄비 4.3L",
+   "price": 19800,
+   "image": "https://img3a.coupangcdn.com/image/vendor_inventory/8d2a/c94c4f6c2df98ccf5c7f73cf07ea489d8c6b91a2e9020325f4bf5dc29a6b.jpg",
+   "url": "https://link.coupang.com/re/AFFSDP?lptag=AF5600192&pageKey=9027950927&itemId=26479407029&vendorItemId=96095016684&traceid=V0-143-f992500dab8a0cb7&pt=0&slot=13",
+   "rocket": true,
+   "category": "주방용품"
+  },
+  {
+   "name": "교동 육개장",
+   "price": 31020,
+   "image": "https://img2a.coupangcdn.com/image/retail/images/62625994724822-e660c934-e6df-4e96-ad33-0fe3af475410.png",
+   "url": "https://link.coupang.com/re/AFFSDP?lptag=AF5600192&pageKey=5071410168&itemId=2484328348&vendorItemId=86469816558&traceid=V0-143-047a1187e06aa345&pt=0&slot=14",
+   "rocket": true,
+   "category": "식품"
+  },
+  {
+   "name": "엘쏘 여성용 캐주얼 스웨이드 숄더백",
+   "price": 25600,
+   "image": "https://image13.coupangcdn.com/image/rs_quotation_api/wi4hoggn/560beafe951146b9b884a7dfe3673246.jpg",
+   "url": "https://link.coupang.com/re/AFFSDP?lptag=AF5600192&pageKey=9170006975&itemId=27023903394&vendorItemId=93992497143&traceid=V0-143-d069e8f3d8544da6&pt=0&slot=15",
+   "rocket": true,
+   "category": "패션잡화"
+  },
+  {
+   "name": "[로켓프레시] 기장물산 연화리 가마솥 전복죽 (냉동)",
+   "price": 8750,
+   "image": "https://image13.coupangcdn.com/image/retail/images/56360594011404-fe3573f6-aa82-45d3-9a81-541122fe2c61.jpg",
+   "url": "https://link.coupang.com/re/AFFSDP?lptag=AF5600192&pageKey=7580973743&itemId=20012051426&vendorItemId=87108936592&traceid=V0-143-1f8a663f5f9393fe&pt=0&slot=16",
+   "rocket": true,
+   "category": "로켓프레시"
+  },
+  {
+   "name": "가그린 어린이용 구강세정제 딸기향 랜덤발송",
+   "price": 10050,
+   "image": "https://img2a.coupangcdn.com/image/retail/images/20662392623637-2cf199de-49f6-405b-bf72-3b339b50b1b5.jpg",
+   "url": "https://link.coupang.com/re/AFFSDP?lptag=AF5600192&pageKey=9334580988&itemId=70364034&vendorItemId=85322648279&traceid=V0-143-36385799765215e7&pt=0&slot=17",
+   "rocket": true,
+   "category": "생활용품"
+  },
+  {
+   "name": "[밸리콘도] 스탠다드 트윈_16평",
+   "price": 77000,
+   "image": "https://image3.coupangcdn.com/image/travel_reactor/travelSeller/resort/A00161284/0480fd7e-639d-4e70-b9cb-cd694512ca07.jpg",
+   "url": "https://link.coupang.com/re/AFFTDP?lptag=AF5600192&pageKey=10000011260915&vendorItemId=70000278991363&itemId=20002199748693&traceid=V0-143-dad1f2b44be15b71&pt=0&slot=18",
+   "rocket": false,
+   "category": "국내투어"
+  },
+  {
+   "name": "프릴 시크릿 오브 베이킹소다 플러스 상큼한 오렌지향",
+   "price": 12900,
+   "image": "https://image1.coupangcdn.com/image/retail/images/2026/09/18/14/4/a0096915-f7d2-4140-8bc7-7a5eb3ab3bfd.jpg",
+   "url": "https://link.coupang.com/re/AFFSDP?lptag=AF5600192&pageKey=9720567484&itemId=29152722409&vendorItemId=96075425768&traceid=V0-143-a550097dd33dd6bb&pt=0&slot=19",
+   "rocket": true,
+   "category": "생활용품"
+  },
+  {
+   "name": "캐럿 여성용 소프트 터치 립 터틀넥 티셔츠",
+   "price": 7900,
+   "image": "https://img4a.coupangcdn.com/image/retail/images/250063572156622-b4575379-ace9-4c72-b0d5-864e2ce62ee5.jpg",
+   "url": "https://link.coupang.com/re/AFFSDP?lptag=AF5600192&pageKey=4759461143&itemId=6062956696&vendorItemId=73359860425&traceid=V0-143-cc6ff139520d2407&pt=0&slot=20",
+   "rocket": true,
+   "category": "패션의류"
+  },
+  {
+   "name": "스튜디오 산전망",
+   "price": 159900,
+   "image": "https://img1c.coupangcdn.com/image/travel_reactor/travelSeller/resort/A01483633/ff52ee79-0e4f-477d-ae83-39df99dd9c65.jpg",
+   "url": "https://link.coupang.com/re/AFFTDP?lptag=AF5600192&pageKey=10000011349449&vendorItemId=70000283667469&itemId=20002206555076&traceid=V0-143-01fdd4603326b546&pt=0&slot=21",
+   "rocket": false,
+   "category": "국내투어"
+  },
+  {
+   "name": "해피홈 파워 올인원 미니프로 베이비파우더 캡슐세제",
+   "price": 16900,
+   "image": "https://image8.coupangcdn.com/image/retail/images/574577407314486-e0314023-1b2a-4162-ba91-8b643e58bad8.jpg",
+   "url": "https://link.coupang.com/re/AFFSDP?lptag=AF5600192&pageKey=9468023817&itemId=28178455327&vendorItemId=93178282892&traceid=V0-143-93987b9a70ef62db&pt=0&slot=22",
+   "rocket": true,
+   "category": "생활용품"
+  },
+  {
+   "name": "양반 참기름김",
+   "price": 18900,
+   "image": "https://image3.coupangcdn.com/image/retail/images/11050054785579-48b0fe88-ce15-46c5-a2d7-f4429da37942.jpg",
+   "url": "https://link.coupang.com/re/AFFSDP?lptag=AF5600192&pageKey=7661692303&itemId=29132645569&vendorItemId=96056589316&traceid=V0-143-92318eedc8dce475&pt=0&slot=23",
+   "rocket": true,
+   "category": "식품"
+  },
+  {
+   "name": "티피링크 500만화소 회전형 홈 카메라 실외용",
+   "price": 99000,
+   "image": "https://static.coupangcdn.com/image/retail/images/2025/02/20/17/1/7cda34bb-46c4-4e05-b7b6-c9412a66406f.jpg",
+   "url": "https://link.coupang.com/re/AFFSDP?lptag=AF5600192&pageKey=8609413498&itemId=24969557885&vendorItemId=91975157683&traceid=V0-143-28ad184ac7b89c89&pt=0&slot=24",
+   "rocket": true,
+   "category": "가전디지털"
   }
  ]
 }
